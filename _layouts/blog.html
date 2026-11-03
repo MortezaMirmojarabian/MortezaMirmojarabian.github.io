@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section>
+  <h1>Blog & Interactive Exercises</h1>
+  <p>Explore articles, teaching insights, and interactive exercises designed to boost language proficiency.</p>
+</section>
+
+<div class="posts-list">
+  {% for post in paginator.posts %}
+    <section>
+      <span style="font-size: 0.85rem; color: var(--text-muted);">{{ post.date | date: "%B %d, %Y" }}</span>
+      <h2><a href="{{ post.url | relative_url }}" style="color: var(--text-main); text-decoration: none;">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt }}</p>
+      <a href="{{ post.url | relative_url }}" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Read Article &rarr;</a>
+    </section>
+  {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding: 1rem 0;">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="btn">&larr; Newer Posts</a>
+  {% else %}
+    <span></span>
+  {% endif %}
+
+  <span style="color: var(--text-muted); font-size: 0.95rem;">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="btn">Older Posts &rarr;</a>
+  {% else %}
+    <span></span>
+  {% endif %}
+</div>
+{% endif %}
