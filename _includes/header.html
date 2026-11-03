@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — Home">
+      <img src="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" alt="" class="brand-mark">
+      <span class="brand-name">Morteza <span>Mirmojarabian</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}aria-current="page"{% endif %}>Blog</a>
+      <a class="nav-contact" href="{{ '/' | relative_url }}#contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>

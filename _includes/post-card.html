@@ -1,0 +1,10 @@
+<article class="post-card">
+  <div class="post-card-top"><span class="post-number">{{ include.post.date | date: "%y" }} / {{ include.index | prepend: '0' | slice: -2, 2 }}</span><span class="post-category">{{ include.post.category | default: 'ENGLISH' }}</span></div>
+  <p class="post-date"><time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: "%b %-d, %Y" }}</time></p>
+  <h3><a href="{{ include.post.url | relative_url }}">{{ include.post.title | escape }}</a></h3>
+  <p class="post-excerpt">{{ include.post.description | default: include.post.excerpt | strip_html | normalize_whitespace | truncate: 150 }}</p>
+  <div class="post-card-bottom"><a class="text-link" href="{{ include.post.url | relative_url }}">Read article <span aria-hidden="true">→</span></a>
+    {% capture share_url %}{{ site.url }}{{ include.post.url }}{% endcapture %}
+    <a class="mini-share" href="https://twitter.com/intent/tweet?text={{ include.post.title | uri_escape }}&url={{ share_url | uri_escape }}" target="_blank" rel="noopener noreferrer" aria-label="Share {{ include.post.title | escape }} on X">Share X ↗</a>
+  </div>
+</article>

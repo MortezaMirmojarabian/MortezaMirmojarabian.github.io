@@ -1,0 +1,112 @@
+---
+layout: default
+---
+<main id="main-content">
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> A space for English learners</p>
+      <h1>Make English<br><span class="text-blue">work for you.</span></h1>
+      <p class="hero-intro">Clear explanations, useful expressions, and thoughtful practice to help you communicate with confidence.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ '/blog/' | relative_url }}">Explore the blog <span aria-hidden="true">↗</span></a>
+        <a class="button button-quiet" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-note"><span class="note-line"></span><span>Practical English, one idea at a time.</span></div>
+    </div>
+    <div class="hero-art" aria-label="Decorative monogram">
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+      <div class="hero-mark-wrap"><img src="{{ '/assets/images/icon-512.png' | relative_url }}" alt="M monogram" class="hero-mark"></div>
+      <span class="hero-coordinate coord-top">LANGUAGE / LEARNING</span>
+      <span class="hero-coordinate coord-bottom">ENGLISH / LEARNING</span>
+      <span class="hero-cross cross-a"></span><span class="hero-cross cross-b"></span>
+    </div>
+  </section>
+
+  <section class="intro-band">
+    <div class="wrap intro-band-inner">
+      <p>Learn with purpose.</p>
+      <p>Speak with confidence.</p>
+      <p>Keep getting better.</p>
+    </div>
+  </section>
+
+  <section class="section wrap" id="about">
+    <div class="section-heading">
+      <p class="section-kicker">01 / ABOUT</p>
+      <h2>Language learning should feel <span class="text-blue">useful.</span></h2>
+    </div>
+    <div class="about-grid">
+      <p class="about-lead">I'm an English teacher interested in helping learners turn what they know into what they can actually say.</p>
+      <div class="about-copy">
+        <p>This site brings together practical language notes, useful phrases and patterns, and interactive exercises. The aim is simple: make English easier to understand, remember, and use in real conversations.</p>
+        <a class="text-link" href="{{ '/blog/' | relative_url }}">Read the latest articles <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-projects" id="projects">
+    <div class="wrap">
+      <div class="section-heading heading-with-aside">
+        <div><p class="section-kicker">02 / PROJECTS</p><h2>Tools and resources.</h2></div>
+        <p class="heading-aside">A growing collection of projects for learners, teachers, and curious minds.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-topline"><span class="project-index">01</span><span class="project-type">WEB TOOL</span></div>
+          <div class="project-icon" aria-hidden="true">&lt;/&gt;</div>
+          <h3>HTML Editor</h3>
+          <p>Edit your HTML, CSS, and JavaScript code and see your changes instantly with a live preview. A handy tool for web developers, designers, and learners.</p>
+          {% if site.html_editor_url and site.html_editor_url != "" %}
+            <a class="text-link" href="{{ site.html_editor_url | escape }}" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a>
+          {% else %}
+            <span class="project-status">Project link to be added</span>
+          {% endif %}
+        </article>
+        <article class="project-card">
+          <div class="project-topline"><span class="project-index">02</span><span class="project-type">TEACHER RESOURCE</span></div>
+          <div class="project-icon project-icon-library" aria-hidden="true">▤</div>
+          <h3>ILI Teachers' Library</h3>
+          <p>An exclusive, collaborative digital library of teaching resources curated by ILI teachers, for ILI teachers.</p>
+          {% if site.ili_library_url and site.ili_library_url != "" %}
+            <a class="text-link" href="{{ site.ili_library_url | escape }}" target="_blank" rel="noopener noreferrer">Explore the library <span aria-hidden="true">↗</span></a>
+          {% else %}
+            <span class="project-status">Project link to be added</span>
+          {% endif %}
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="latest-posts">
+    <div class="section-heading heading-with-aside">
+      <div><p class="section-kicker">03 / FROM THE BLOG</p><h2>Latest posts.</h2></div>
+      <a class="text-link heading-link" href="{{ '/blog/' | relative_url }}">View all posts <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="post-grid">
+      {% assign latest_posts = site.posts | slice: 0, 3 %}
+      {% for post in latest_posts %}
+        {% include post-card.html post=post index=forloop.index %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="wrap contact-inner">
+      <div><p class="section-kicker">04 / CONTACT</p><h2>Let's stay<br><span class="text-blue">in touch.</span></h2><p class="contact-copy">For questions, ideas, or collaboration, you can reach me through the channels below.</p></div>
+      {% assign telegram_url = site.telegram_url | default: '' %}
+      {% assign email_address = site.email | default: '' %}
+      <div class="contact-links">
+        {% if telegram_url != '' %}
+          <a class="contact-link" href="{{ telegram_url | escape }}" target="_blank" rel="noopener noreferrer"><span>Telegram</span><span aria-hidden="true">↗</span></a>
+        {% endif %}
+        {% if email_address != '' %}
+          <a class="contact-link" href="mailto:{{ email_address | escape }}"><span>Email</span><span aria-hidden="true">↗</span></a>
+        {% endif %}
+        {% if telegram_url == '' and email_address == '' %}
+          <p class="contact-pending">Telegram and email links will appear here once added in <code>_config.yml</code>.</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</main>

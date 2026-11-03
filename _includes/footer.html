@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="wrap footer-main">
+    <a class="brand footer-brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/favicon-32x32.png' | relative_url }}" alt="" class="brand-mark footer-mark">
+      <span class="brand-name">Morteza <span>Mirmojarabian</span></span>
+    </a>
+    <p class="footer-tagline">English learning, made practical.</p>
+    <div class="footer-links">
+      {% if site.x_username and site.x_username != "" %}
+        {% assign x_handle = site.x_username | remove: '@' %}
+        <a href="https://x.com/{{ x_handle | uri_escape }}" target="_blank" rel="noopener noreferrer">Follow on X <span aria-hidden="true">↗</span></a>
+      {% endif %}
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ site.title }}.</span><span>Built with Jekyll.</span></div>
+</footer>
