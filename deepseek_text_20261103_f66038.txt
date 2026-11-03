@@ -1,0 +1,15 @@
+.
+├── _config.yml
+├── Gemfile
+├── index.html
+├── _layouts/
+│   ├── default.html
+│   └── post.html
+├── _posts/
+│   └── 2026-11-03-a-simple-way-to-practice-english.md
+├── blog/
+│   └── index.html
+└── assets/
+    ├── favicon.png          # your attached 32×32 favicon
+    └── css/
+        └── main.css

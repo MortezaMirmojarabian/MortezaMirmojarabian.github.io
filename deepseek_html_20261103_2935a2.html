@@ -1,0 +1,87 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero container">
+  <p class="eyebrow">English language · Interactive learning</p>
+  <h1>Simple tools and clear articles for English learners and teachers.</h1>
+  <p class="lead">
+    I write about the English language, build interactive exercises, and maintain small tools
+    for learners and teachers.
+  </p>
+  <div class="actions">
+    <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+    <a class="btn" href="#about">About me</a>
+  </div>
+</section>
+
+<section id="about" class="section container">
+  <h2>About</h2>
+  <p>
+    I’m Morteza, an English language teacher and developer interested in clear explanations,
+    practical exercises, and useful learning tools. This site is where I share articles,
+    interactive practice, and selected projects.
+  </p>
+</section>
+
+<section id="projects" class="section container">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <article class="card">
+      <h3>HTML Editor: Online HTML Editor with Real-Time Preview</h3>
+      <p>
+        Edit your HTML, CSS, and JavaScript code and see your changes instantly with live preview.
+        A handy tool for web developers, designers, and learners.
+      </p>
+      <a class="text-link" href="https://htmleditor.gitlab.io/" target="_blank" rel="noopener">
+        Open HTML Editor →
+      </a>
+    </article>
+
+    <article class="card">
+      <h3>ILI Teachers’ Library</h3>
+      <p>
+        An exclusive, collaborative digital library of teaching resources curated by ILI teachers,
+        for ILI teachers.
+      </p>
+      <a class="text-link" href="https://iliteacherslibrary.github.io/" target="_blank" rel="noopener">
+        Open ILI Teachers’ Library →
+      </a>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="section container">
+  <h2>Contact</h2>
+  <p>Telegram and email are the best ways to reach me.</p>
+  <ul class="contact-list">
+    <li>
+      <span>Telegram</span>
+      <a href="https://t.me/{{ site.author.telegram }}" target="_blank" rel="noopener">
+        @{{ site.author.telegram }}
+      </a>
+    </li>
+    <li>
+      <span>Email</span>
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    </li>
+  </ul>
+</section>
+
+<section class="section container">
+  <h2>Latest posts</h2>
+  <div class="post-list">
+    {% for post in site.posts limit:3 %}
+      <article class="post-row">
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%b %-d, %Y" }}
+        </time>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
