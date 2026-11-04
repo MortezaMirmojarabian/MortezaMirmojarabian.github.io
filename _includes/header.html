@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/favicon.png' | relative_url }}" alt="" width="32" height="32">
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}" class="{% if page.layout == 'home' %}active{% endif %}">Home</a>
+      <a href="{{ '/blog/' | relative_url }}" class="{% if page.layout == 'blog' or page.layout == 'post' %}active{% endif %}">Blog</a>
+      <a class="nav-x" href="https://x.com/{{ site.author.twitter }}" target="_blank" rel="noopener" aria-label="Follow me on X">{% include icon-x.html %}</a>
+    </nav>
+  </div>
+</header>
