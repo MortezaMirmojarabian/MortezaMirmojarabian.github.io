@@ -1,0 +1,38 @@
+title: Morteza Mirmojarabian
+email: ""
+description: "English-language notes, practical exercises, and teaching projects by Morteza Mirmojarabian."
+url: "https://mortezamirmojarabian.github.io"
+baseurl: ""
+lang: en
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+posts_per_page: 4
+future: false
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - TODO.md
+  - app.config.ts
+  - vendor
+  - .bundle
+  - .git
+  - .github
+  - .sass-cache
+
+include:
+  - manus-routes.json
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Morteza Mirmojarabian
+      image: /favicon.png
