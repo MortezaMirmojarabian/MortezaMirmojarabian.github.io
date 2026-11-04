@@ -1,0 +1,72 @@
+---
+layout: default
+title: Blog
+description: >-
+  Articles and interactive exercises on the English language — grammar,
+  vocabulary, study skills, and quizzes with instant feedback.
+---
+
+<header class="page-header">
+  <div class="container">
+    <p class="overline">The blog</p>
+    <h1 class="page-title">Articles &amp; exercises</h1>
+    <p class="page-lede">
+      Grammar, vocabulary, and study skills &mdash; each article ends where it should:
+      with something to actually <em>do</em>. Every exercise gives you instant feedback.
+    </p>
+  </div>
+</header>
+
+<section class="container post-list-section" aria-label="All posts">
+  {% if paginator.total_posts > 0 %}
+    <div class="post-list">
+      {% for post in paginator.posts %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-note">Posts are on the way &mdash; check back soon.</p>
+  {% endif %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="Blog pagination">
+    <p class="pagination-status">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+      &middot; {{ paginator.total_posts }} posts
+    </p>
+
+    <ul class="pagination-links">
+      {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+          {% assign prev_href = '/blog/' %}
+        {% else %}
+          {% assign prev_href = '/blog/page/' | append: paginator.previous_page | append: '/' %}
+        {% endif %}
+        <li><a class="page-link" href="{{ prev_href | relative_url }}" rel="prev">&larr; Newer</a></li>
+      {% else %}
+        <li><span class="page-link is-disabled">&larr; Newer</span></li>
+      {% endif %}
+
+      {% for page_number in (1..paginator.total_pages) %}
+        <li>
+          {% if page_number == paginator.page %}
+            <span class="page-link is-current" aria-current="page">{{ page_number }}</span>
+          {% elsif page_number == 1 %}
+            <a class="page-link" href="{{ '/blog/' | relative_url }}">{{ page_number }}</a>
+          {% else %}
+            {% assign page_href = '/blog/page/' | append: page_number | append: '/' %}
+            <a class="page-link" href="{{ page_href | relative_url }}">{{ page_number }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+
+      {% if paginator.next_page %}
+        {% assign next_href = '/blog/page/' | append: paginator.next_page | append: '/' %}
+        <li><a class="page-link" href="{{ next_href | relative_url }}" rel="next">Older &rarr;</a></li>
+      {% else %}
+        <li><span class="page-link is-disabled">Older &rarr;</span></li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

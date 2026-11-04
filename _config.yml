@@ -1,0 +1,60 @@
+# ============================================================
+#  Site settings
+# ============================================================
+
+title: Morteza Mir Mojarabian
+tagline: Articles and interactive exercises for English learners
+description: >-
+  Personal website of Morteza Mir Mojarabian — clear articles on the
+  English language, interactive exercises for learners, and small web
+  tools for students and teachers.
+
+url: "https://mortezamirmojarabian.github.io"
+baseurl: ""
+
+# ------------------------------------------------------------
+#  IMPORTANT — replace these three values with your real ones
+#  (usernames without the @, and your real email address)
+# ------------------------------------------------------------
+twitter_username: "YourTwitterHandle"
+telegram_username: "YourTelegramUsername"
+email: "your.email@example.com"
+
+# ------------------------------------------------------------
+#  Build settings (GitHub Pages compatible)
+# ------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+permalink: /blog/:year/:month/:day/:title/
+
+# Blog pagination: 4 posts per page
+paginate: 4
+paginate_path: "/blog/page/:num/"
+
+# jekyll-paginate is on the GitHub Pages plugin whitelist,
+# so pagination works on GitHub Pages with no extra setup.
+plugins:
+  - jekyll-paginate
+
+# ------------------------------------------------------------
+#  Defaults
+# ------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# ------------------------------------------------------------
+#  Repo files that should not be published to the website
+# ------------------------------------------------------------
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - ".gitignore"
+  - "vendor"

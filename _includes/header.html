@@ -1,0 +1,18 @@
+{% assign nav_url = page.url | remove: 'index.html' %}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — home">
+      <img class="brand-logo" src="{{ '/favicon.png' | relative_url }}" alt="" width="26" height="26">
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a class="nav-link{% if nav_url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+      <a class="nav-link{% if nav_url contains '/blog' %} is-active{% endif %}" href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a class="btn btn-dark btn-sm btn-follow" href="https://twitter.com/intent/follow?screen_name={{ site.twitter_username }}" target="_blank" rel="noopener" title="Follow {{ site.title }} on X">
+        <svg class="icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span class="btn-follow-label">Follow on X</span>
+      </a>
+    </nav>
+  </div>
+</header>

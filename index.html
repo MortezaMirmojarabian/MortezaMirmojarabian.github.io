@@ -1,0 +1,202 @@
+---
+layout: default
+---
+
+<!-- ============================================================ -->
+<!--  Hero                                                        -->
+<!-- ============================================================ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="overline">English language &middot; Teaching &middot; Web tools</p>
+      <h1 class="hero-title">{{ site.title }}</h1>
+      <p class="hero-lede">
+        I&rsquo;m an English teacher with a love for the web. Here you&rsquo;ll find clear
+        articles on the English language, interactive exercises you can take right in
+        your browser, and the small tools I build for learners and teachers.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Read the blog <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 132 132" width="132" height="132" focusable="false">
+        <defs>
+          <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f7df8e"/>
+            <stop offset="45%" stop-color="#e2b644"/>
+            <stop offset="100%" stop-color="#a87b0e"/>
+          </linearGradient>
+        </defs>
+        <text x="66" y="72" text-anchor="middle" dominant-baseline="central"
+              font-family="Lora, Georgia, 'Times New Roman', serif" font-size="82"
+              font-weight="700" fill="url(#goldGradient)" stroke="#8a6508" stroke-width="1">M</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  About                                                       -->
+<!-- ============================================================ -->
+<section class="section section-soft" id="about">
+  <div class="container">
+    <p class="overline">About</p>
+    <h2 class="section-title">A little about me</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hello! I&rsquo;m Morteza, an English teacher at the
+          <strong>ILI (Iran Language Institute)</strong> with a soft spot for grammar,
+          vocabulary, and the small &mdash; but stubborn &mdash; details of the English
+          language. Most of my week is spent in classrooms, helping learners move from
+          &ldquo;I am agree&rdquo; to &ldquo;I agree&rdquo;, one clear explanation at a time.
+        </p>
+        <p>
+          When I&rsquo;m not teaching, I build things for the web. I believe well-designed
+          tools and exercises make learning faster and a little more fun, so on this site
+          I combine both: short, practical articles followed by interactive exercises that
+          give you instant feedback.
+        </p>
+        <p>
+          Have a look around, try an exercise, and if something still doesn&rsquo;t make
+          sense &mdash; tell me. That&rsquo;s usually how the next post gets written.
+        </p>
+      </div>
+
+      <dl class="about-facts">
+        <div class="about-fact">
+          <dt>Based in</dt>
+          <dd>Iran</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Teaches at</dt>
+          <dd>ILI &mdash; Iran Language Institute</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Focus</dt>
+          <dd>Grammar &amp; vocabulary</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Also</dt>
+          <dd>Building web tools for learners &amp; teachers</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  Contact                                                     -->
+<!-- ============================================================ -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="overline">Contact</p>
+    <h2 class="section-title">Say hello</h2>
+    <p class="section-lede">
+      The quickest ways to reach me &mdash; for questions, corrections, or ideas for a
+      future post. I usually reply within a couple of days.
+    </p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="https://t.me/{{ site.telegram_username }}" target="_blank" rel="noopener">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+        </span>
+        <span class="contact-body">
+          <strong class="contact-name">Telegram</strong>
+          <span class="contact-value">@{{ site.telegram_username }}</span>
+          <span class="contact-action">Message me on Telegram</span>
+        </span>
+        <span class="contact-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <a class="contact-card" href="mailto:{{ site.email }}">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </span>
+        <span class="contact-body">
+          <strong class="contact-name">Email</strong>
+          <span class="contact-value">{{ site.email }}</span>
+          <span class="contact-action">Write to me</span>
+        </span>
+        <span class="contact-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  Projects                                                    -->
+<!-- ============================================================ -->
+<section class="section section-soft" id="projects">
+  <div class="container">
+    <p class="overline">Projects</p>
+    <h2 class="section-title">Things I&rsquo;m building</h2>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 class="project-title">HTML Editor</h3>
+        <p class="project-tagline">Online HTML Editor with Real-Time Preview</p>
+        <p class="project-desc">
+          Edit your HTML, CSS, and JavaScript code and see your changes instantly with
+          live preview. A handy tool for web developers, designers, and learners.
+        </p>
+        <a class="link-more" href="https://github.com/mortezamirmojarabian" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3 class="project-title">ILI Teachers&rsquo; Library</h3>
+        <p class="project-tagline">By ILI teachers, for ILI teachers</p>
+        <p class="project-desc">
+          An exclusive, collaborative digital library of teaching resources curated by
+          ILI teachers, for ILI teachers.
+        </p>
+        <a class="link-more" href="https://github.com/mortezamirmojarabian" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  Latest posts                                                -->
+<!-- ============================================================ -->
+<section class="section" id="latest">
+  <div class="container">
+    <div class="section-head-row">
+      <div>
+        <p class="overline">Blog</p>
+        <h2 class="section-title">Latest posts</h2>
+      </div>
+      <a class="link-more" href="{{ '/blog/' | relative_url }}">
+        View all posts
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    {% if site.posts and site.posts != empty %}
+      <div class="post-list">
+        {% for post in site.posts limit: 3 %}
+          {% include post-card.html post=post %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-note">Posts are on the way &mdash; check back soon.</p>
+    {% endif %}
+  </div>
+</section>
