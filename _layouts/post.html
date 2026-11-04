@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{% assign words = page.content | number_of_words %}
+{% assign read_time = words | divided_by: 200.0 | ceil %}
+
+<article class="post">
+  <header class="page-head">
+    <div class="container narrow">
+      <div class="post-meta">
+        <span class="badge badge-{{ page.categories | first }}">{{ page.categories | first | capitalize }}</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+        <span class="dot">&middot;</span>
+        <span>{{ read_time }} min read</span>
+      </div>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <div class="container narrow post-body">
+    {{ content }}
+
+    <div class="post-share">
+      <span>Found this useful? Pass it on.</span>
+      <a class="btn btn-x" href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&via={{ site.author.twitter }}" target="_blank" rel="noopener">{% include icon-x.html %}<span>Share on X</span></a>
+    </div>
+
+    <nav class="post-nav" aria-label="Post navigation">
+      {% if page.previous %}
+        <a class="post-nav-link" href="{{ page.previous.url | relative_url }}"><span class="dir">&larr; Newer</span>{{ page.previous.title }}</a>
+      {% else %}<span></span>{% endif %}
+      {% if page.next %}
+        <a class="post-nav-link next" href="{{ page.next.url | relative_url }}"><span class="dir">Older &rarr;</span>{{ page.next.title }}</a>
+      {% endif %}
+    </nav>
+  </div>
+</article>

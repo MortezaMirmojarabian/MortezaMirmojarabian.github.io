@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="container">
+    <p class="hero-kicker">{{ site.tagline }}</p>
+    <h1>{{ site.author.name }}</h1>
+    <p class="hero-sub">Welcome to my corner of the web — clear, practical writing about the English language, interactive practice for learners, and small tools that make life on the web a little easier.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+      <a class="btn btn-ghost" href="#projects">See projects</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section section-alt">
+  <div class="container narrow">
+    <p class="overline">About</p>
+    <h2>Teacher, writer, builder.</h2>
+    {{ content }}
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container">
+    <p class="overline">Projects</p>
+    <h2>Things I&rsquo;ve built</h2>
+    <div class="project-grid">
+      {% for project in site.projects %}
+      <article class="card project-card">
+        <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+        <p class="project-subtitle">{{ project.subtitle }}</p>
+        <p>{{ project.description }}</p>
+        <a class="card-link" href="{{ project.url }}">Visit project &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="latest" class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="overline">Latest posts</p>
+        <h2>Fresh from the blog</h2>
+      </div>
+      <a class="btn btn-ghost" href="{{ '/blog/' | relative_url }}">All posts</a>
+    </div>
+    <div class="post-list">
+      {% for post in site.posts limit: 3 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container narrow center">
+    <p class="overline">Contact</p>
+    <h2>Let&rsquo;s stay in touch</h2>
+    <p class="section-sub">The two fastest ways to reach me — a message on Telegram, or a good old-fashioned email.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="{{ site.author.telegram }}" target="_blank" rel="noopener">{% include icon-telegram.html %}<span>Telegram</span></a>
+      <a class="btn btn-outline" href="mailto:{{ site.author.email }}">{% include icon-mail.html %}<span>{{ site.author.email }}</span></a>
+    </div>
+  </div>
+</section>
