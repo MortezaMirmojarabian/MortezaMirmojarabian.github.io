@@ -1,0 +1,37 @@
+{%- comment -%}
+  Meta row for a post: type badge, level, date, reading time (or question count).
+  Usage: {% include post-meta.html post=post %}   (optional: words=NUMBER)
+{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- if p.label -%}
+  {%- assign label = p.label -%}
+{%- elsif p.exercise -%}
+  {%- assign label = 'Exercise' -%}
+{%- else -%}
+  {%- assign label = 'Article' -%}
+{%- endif -%}
+{%- if p.exercise -%}
+  {%- assign n = p.exercise.questions | size -%}
+  {%- if n == 1 -%}
+    {%- assign info = '1 question' -%}
+  {%- else -%}
+    {%- capture info -%}{{ n }} questions{%- endcapture -%}
+  {%- endif -%}
+{%- else -%}
+  {%- if include.words -%}
+    {%- assign words = include.words -%}
+  {%- else -%}
+    {%- assign words = p.content | strip_html | number_of_words -%}
+  {%- endif -%}
+  {%- assign mins = words | divided_by: 200.0 | ceil -%}
+  {%- if mins < 1 -%}{%- assign mins = 1 -%}{%- endif -%}
+  {%- capture info -%}{{ mins }} min read{%- endcapture -%}
+{%- endif -%}
+<div class="post-meta">
+  <span class="badge{% if p.exercise %} badge-accent{% endif %}">{{ label }}</span>
+  {%- if p.level %}
+  <span class="meta-item" title="CEFR level">Level {{ p.level }}</span>
+  {%- endif %}
+  <time class="meta-item" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: '%b %-d, %Y' }}</time>
+  <span class="meta-item">{{ info }}</span>
+</div>

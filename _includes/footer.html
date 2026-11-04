@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img class="brand-mark" src="{{ '/assets/img/logo-mark.png' | relative_url }}" alt="" width="34" height="26">
+        <span class="brand-name">{{ site.title }}</span>
+      </a>
+      {% include follow-x.html %}
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}</p>
+      <p>Built with Jekyll and hosted on GitHub Pages.</p>
+    </div>
+  </div>
+</footer>

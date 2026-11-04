@@ -1,0 +1,32 @@
+{%- assign x_ready = false -%}
+{%- if site.x_username and site.x_username != 'your_x_username' -%}{%- assign x_ready = true -%}{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<script>
+  /* Apply the saved (or system) theme before first paint, so the page never flashes. */
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m && t === 'dark') m.setAttribute('content', '#09090b');
+  })();
+</script>
+{% seo %}
+{% feed_meta %}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/192x192.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/180x180.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<meta name="msapplication-TileImage" content="{{ '/assets/img/270x270.png' | relative_url }}">
+<meta name="msapplication-TileColor" content="#ffffff">
+{%- if x_ready %}
+<meta name="twitter:site" content="@{{ site.x_username }}">
+<meta name="twitter:creator" content="@{{ site.x_username }}">
+{%- endif %}
+<link rel="preload" href="{{ '/assets/fonts/inter-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">

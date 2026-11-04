@@ -1,0 +1,93 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title">Teaching English,<br><span class="hero-title-soft">building tools for learning.</span></h1>
+    <p class="hero-lead">Articles on the English language, interactive exercises for learners, and the tools I build for teachers and students.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Read the blog <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      {% include follow-x.html %}
+    </div>
+  </div>
+</section>
+
+{% comment %} ABOUT {% endcomment %}
+<section class="container row" id="about" aria-labelledby="about-title">
+  <h2 class="row-label" id="about-title">About</h2>
+  <div class="row-body about-text">
+    <p>Hi, I'm Morteza &mdash; an English teacher and librarian at the Iran Language Institute (ILI). I like finding clearer ways to explain how English works, and ways to make practice feel less like homework.</p>
+    <p>Alongside teaching, I build and manage shared resources for my fellow teachers and make small web tools for learners. This site is where it all comes together: articles on the English language, interactive exercises, and the projects I'm working on.</p>
+  </div>
+</section>
+
+{% comment %} CONTACT (Telegram + email only) {% endcomment %}
+<section class="container row" id="contact" aria-labelledby="contact-title">
+  <h2 class="row-label" id="contact-title">Contact</h2>
+  <div class="row-body">
+    <p class="row-intro">Questions, ideas, or feedback on a post? Get in touch.</p>
+    <ul class="contact-grid">
+      <li>
+        <a class="contact-item" href="https://t.me/{{ site.telegram }}" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-telegram"/></svg></span>
+          <span class="contact-text">
+            <span class="contact-label">Telegram</span>
+            <span class="contact-value">@{{ site.telegram }}</span>
+          </span>
+          <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-item" href="mailto:{{ site.email }}">
+          <span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
+          <span class="contact-text">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">{{ site.email }}</span>
+          </span>
+          <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% comment %} PROJECTS (edit them in _data/projects.yml) {% endcomment %}
+<section class="container row" id="projects" aria-labelledby="projects-title">
+  <h2 class="row-label" id="projects-title">Projects</h2>
+  <div class="row-body">
+    <div class="project-grid">
+      {%- for project in site.data.projects %}
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-{{ project.icon | default: 'code' }}"/></svg></span>
+          <svg class="icon project-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+        </div>
+        <h3 class="project-name"><a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name | escape }}<span class="sr-only"> (opens in a new tab)</span></a></h3>
+        {%- if project.subtitle %}
+        <p class="project-subtitle">{{ project.subtitle | escape }}</p>
+        {%- endif %}
+        <p class="project-desc">{{ project.description | strip | escape }}</p>
+        <p class="project-url">{{ project.url | remove: 'https://' | remove: 'http://' | remove: 'www.' | split: '/' | first }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% comment %} LATEST POSTS {% endcomment %}
+<section class="container row" id="latest" aria-labelledby="latest-title">
+  <div class="row-label-wrap">
+    <h2 class="row-label" id="latest-title">Latest posts</h2>
+    <a class="link-arrow" href="{{ '/blog/' | relative_url }}">All posts <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  </div>
+  <div class="row-body">
+    <div class="post-list">
+      {%- for post in site.posts limit: 3 %}
+      {% include post-card.html post=post %}
+      {%- else %}
+      <p class="empty">No posts yet &mdash; the first one is on its way.</p>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

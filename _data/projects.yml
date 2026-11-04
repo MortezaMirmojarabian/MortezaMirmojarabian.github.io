@@ -1,0 +1,17 @@
+# Projects shown on the Home page, in this order.
+# icon: code | library  (see _includes/icons.html for more)
+
+- name: HTML Editor
+  subtitle: Online HTML Editor with Real-Time Preview
+  url: https://htmleditor.gitlab.io/
+  icon: code
+  description: >-
+    Edit your HTML, CSS, and JavaScript code and see your changes instantly
+    with live preview. A handy tool for web developers, designers, and learners.
+
+- name: ILI Teachers' Library
+  url: https://iliteacherslibrary.github.io/
+  icon: library
+  description: >-
+    An exclusive, collaborative digital library of teaching resources curated
+    by ILI teachers, for ILI teachers.
