@@ -1,6 +1,0 @@
-{%- comment -%}Share the current page on X. Uses the plain intent link: no scripts, no tracking.{%- endcomment -%}
-<a class="btn btn-primary" href="https://x.com/intent/post?text={{ page.title | url_encode }}&amp;url={{ page.url | absolute_url | url_encode }}{% if site.x_username and site.x_username != 'your_x_username' %}&amp;via={{ site.x_username | url_encode }}{% endif %}" target="_blank" rel="noopener noreferrer">
-  <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
-  <span>Share on X</span>
-  <span class="sr-only">(opens in a new tab)</span>
-</a>
