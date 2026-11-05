@@ -1,0 +1,114 @@
+---
+layout: post
+title: "Interactive Exercise: Past Simple vs. Present Perfect Quiz"
+date: 2026-10-20 09:00:00 +0330
+categories: [exercises]
+tags: [grammar, quiz, interactive]
+description: "Test yourself: can you choose between the past simple and the present perfect? Five questions, instant feedback."
+---
+
+<p>The classic dilemma! Choose the correct verb form in each sentence. You'll get instant feedback — try to beat your score on a second run.</p>
+
+<div class="exercise">
+  <div id="quiz">
+    <p class="quiz-progress" id="quiz-progress"></p>
+    <h3 class="quiz-question" id="quiz-question" style="margin-top:0;"></h3>
+    <div class="quiz-options" id="quiz-options"></div>
+    <p class="quiz-feedback" id="quiz-feedback"></p>
+    <button class="btn btn-sm" id="quiz-next" style="display:none;">Next question</button>
+  </div>
+  <div class="quiz-result" id="quiz-result" style="display:none;">
+    <p class="quiz-result-score" id="quiz-score"></p>
+    <p class="quiz-result-msg" id="quiz-msg"></p>
+    <button class="btn" id="quiz-restart">Try again</button>
+  </div>
+</div>
+
+<h2>Remember the rule</h2>
+<ul>
+  <li><strong>Past simple</strong> — finished time: <em>yesterday, last week, in 2019, ago</em>. The time is closed.</li>
+  <li><strong>Present perfect</strong> — unfinished time or no time at all: <em>ever, never, just, already, yet, since, for</em>. The connection to now is open.</li>
+</ul>
+
+<script>
+(function () {
+  var questions = [
+    { q: "I ___ that movie three times.", options: ["saw", "have seen"], answer: 1,
+      why: "No finished time is mentioned — the experience is still relevant." },
+    { q: "She ___ to Paris in 2018.", options: ["went", "has gone"], answer: 0,
+      why: "'In 2018' is finished time, so we use the past simple." },
+    { q: "___ you ever ___ sushi?", options: ["Did ... try", "Have ... tried"], answer: 1,
+      why: "'Ever' asks about life experience up to now — present perfect." },
+    { q: "We ___ our homework yesterday.", options: ["finished", "have finished"], answer: 0,
+      why: "'Yesterday' closes the time — past simple." },
+    { q: "He ___ just ___ his keys.", options: ["has ... lost", "lost"], answer: 0,
+      why: "'Just' signals a recent event with present relevance — present perfect." }
+  ];
+  var i = 0, score = 0, locked = false;
+  var el = function (id) { return document.getElementById(id); };
+
+  function render() {
+    locked = false;
+    var item = questions[i];
+    el("quiz-progress").textContent = "Question " + (i + 1) + " of " + questions.length + " · Score: " + score;
+    el("quiz-question").textContent = item.q;
+    el("quiz-feedback").textContent = "";
+    el("quiz-feedback").className = "quiz-feedback";
+    el("quiz-next").style.display = "none";
+    var box = el("quiz-options");
+    box.innerHTML = "";
+    item.options.forEach(function (opt, idx) {
+      var btn = document.createElement("button");
+      btn.className = "quiz-option";
+      btn.type = "button";
+      btn.textContent = opt;
+      btn.addEventListener("click", function () { choose(idx, btn); });
+      box.appendChild(btn);
+    });
+  }
+
+  function choose(idx, btn) {
+    if (locked) return;
+    locked = true;
+    var item = questions[i];
+    var opts = el("quiz-options").children;
+    for (var k = 0; k < opts.length; k++) opts[k].disabled = true;
+    if (idx === item.answer) {
+      btn.classList.add("correct");
+      el("quiz-feedback").textContent = "Correct! " + item.why;
+      el("quiz-feedback").classList.add("ok");
+      score++;
+    } else {
+      btn.classList.add("wrong");
+      opts[item.answer].classList.add("correct");
+      el("quiz-feedback").textContent = "Not quite. " + item.why;
+      el("quiz-feedback").classList.add("no");
+    }
+    el("quiz-progress").textContent = "Question " + (i + 1) + " of " + questions.length + " · Score: " + score;
+    el("quiz-next").style.display = "inline-flex";
+    el("quiz-next").textContent = (i === questions.length - 1) ? "See results" : "Next question";
+  }
+
+  el("quiz-next").addEventListener("click", function () {
+    if (i < questions.length - 1) { i++; render(); }
+    else {
+      el("quiz").style.display = "none";
+      el("quiz-result").style.display = "block";
+      el("quiz-score").textContent = score + " / " + questions.length;
+      var msg = score === questions.length ? "Perfect! You've mastered this." :
+                score >= 3 ? "Good job — review the misses and try again." :
+                "Keep practising — read the rule below and have another go.";
+      el("quiz-msg").textContent = msg;
+    }
+  });
+
+  el("quiz-restart").addEventListener("click", function () {
+    i = 0; score = 0;
+    el("quiz-result").style.display = "none";
+    el("quiz").style.display = "block";
+    render();
+  });
+
+  render();
+})();
+</script>

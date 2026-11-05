@@ -1,0 +1,96 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="container">
+    <p class="hero-kicker">English Language &middot; Articles &middot; Interactive Exercises</p>
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-sub">{{ site.description }}</p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ '/blog/' | relative_url }}">Read the Blog</a>
+      <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <p class="section-text">
+      I'm {{ site.author.name }}, an English teacher and web enthusiast. On this site I write
+      about the English language &mdash; grammar, vocabulary, pronunciation and learning tips &mdash;
+      and I build interactive exercises that learners can practise with right in the browser.
+      Take a look around, and feel free to reach out.
+    </p>
+  </div>
+</section>
+
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="cards">
+      <article class="card">
+        <h3 class="card-title">HTML Editor</h3>
+        <p class="card-tag">Online HTML Editor with Real-Time Preview</p>
+        <p class="card-text">
+          Edit your HTML, CSS, and JavaScript code and see your changes instantly with live
+          preview. A handy tool for web developers, designers, and learners.
+        </p>
+        <a class="card-link" href="https://htmleditor.gitlab.io/" target="_blank" rel="noopener">
+          Visit project &rarr;
+        </a>
+      </article>
+      <article class="card">
+        <h3 class="card-title">ILI Teachers' Library</h3>
+        <p class="card-tag">A collaborative digital library</p>
+        <p class="card-text">
+          An exclusive, collaborative digital library of teaching resources curated by ILI
+          teachers, for ILI teachers.
+        </p>
+        <a class="card-link" href="https://iliteacherslibrary.github.io/" target="_blank" rel="noopener">
+          Visit project &rarr;
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Latest Posts</h2>
+      <a class="view-all" href="{{ '/blog/' | relative_url }}">View all &rarr;</a>
+    </div>
+    <ul class="post-list">
+      {% for post in site.posts limit:3 %}
+      <li class="post-card">
+        <div class="post-card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {% if post.categories %}<span class="tag">{{ post.categories | first }}</span>{% endif %}
+        </div>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-card-text">{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+        <a class="read-more" href="{{ post.url | relative_url }}">Read more &rarr;</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-text">I'd love to hear from you. Reach me via Telegram or email:</p>
+    <div class="contact-actions">
+      <a class="btn" href="{{ site.author.telegram }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M9.04 15.61 8.9 19.2c.39 0 .56-.17.77-.37l1.85-1.77 3.83 2.81c.7.39 1.2.19 1.39-.66l2.52-11.83c.25-1.04-.38-1.45-1.06-1.2L3.9 12.9c-1.01.4-1 .96-.17 1.21l3.72 1.16 8.63-5.44c.41-.25.78-.11.47.14l-6.98 6.36Z"/></svg>
+        Telegram
+      </a>
+      <a class="btn btn-ghost" href="mailto:{{ site.author.email }}">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</section>
