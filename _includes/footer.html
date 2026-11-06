@@ -9,7 +9,11 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}</p>
-      <p>Built with Jekyll and hosted on GitHub Pages.</p>
+      <nav class="footer-contact" aria-label="Contact">
+        <span class="footer-contact-label">Contact</span>
+        <a href="https://t.me/{{ site.telegram }}" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg>Telegram<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:{{ site.email }}"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+      </nav>
     </div>
   </div>
 </footer>
