@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-mark" src="{{ '/assets/img/logo-mark.png' | relative_url }}" alt="" width="34" height="26">
+      <span class="brand-name">
+        <span class="brand-full">{{ site.title }}</span>
+        <span class="brand-short">{{ site.short_name | default: site.title }}</span>
+      </span>
+      <span class="sr-only">(home)</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+      <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
+  </div>
+</header>

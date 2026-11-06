@@ -1,0 +1,62 @@
+{%- comment -%}
+  Previous / next + numbered pages for the Blog (jekyll-paginate).
+  Up to 9 pages are all listed. With more, only the first, the last and the pages around the current one are
+  listed, with "…" in between, so the row stays short however many posts there are. On a phone (with more than
+  5 pages) the numbers give way to "Page 6 of 60" between the two arrows.
+{%- endcomment -%}
+{%- assign total = paginator.total_pages -%}
+{%- assign current = paginator.page -%}
+{%- if total > 1 -%}
+<nav class="pagination{% if total > 5 %} pagination-many{% endif %}" aria-label="Blog pages">
+  {% if paginator.previous_page %}
+  <a class="pagination-btn" href="{{ paginator.previous_page_path | relative_url }}" rel="prev">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span>Newer</span>
+  </a>
+  {% else %}
+  <span class="pagination-btn is-disabled" aria-disabled="true">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span>Newer</span>
+  </span>
+  {% endif %}
+
+  <ol class="pagination-pages">
+    {%- assign before_last = total | minus: 1 -%}
+    {%- assign three_from_end = total | minus: 3 -%}
+    {%- assign last_was_shown = true -%}
+    {%- for n in (1..total) -%}
+      {%- assign distance = n | minus: current | abs -%}
+      {%- assign show = false -%}
+      {%- if total <= 9 or n == 1 or n == total or distance <= 1 -%}{%- assign show = true -%}{%- endif -%}
+      {%- comment -%} Never replace a single page with "…": write the page itself. {%- endcomment -%}
+      {%- if n == 2 and current == 4 -%}{%- assign show = true -%}{%- endif -%}
+      {%- if n == before_last and current == three_from_end -%}{%- assign show = true -%}{%- endif -%}
+      {%- if show %}
+    <li>
+      {%- if n == current %}
+      <span aria-current="page"><span class="sr-only">Page </span>{{ n }}</span>
+      {%- elsif n == 1 %}
+      <a href="{{ '/blog/' | relative_url }}"><span class="sr-only">Page </span>1</a>
+      {%- else %}
+      <a href="{{ site.paginate_path | replace: ':num', n | relative_url }}"><span class="sr-only">Page </span>{{ n }}</a>
+      {%- endif %}
+    </li>
+      {%- elsif last_was_shown %}
+    <li class="pagination-gap" aria-hidden="true">&hellip;</li>
+      {%- endif -%}
+      {%- assign last_was_shown = show -%}
+    {%- endfor %}
+  </ol>
+  {%- if total > 5 %}
+  <p class="pagination-summary">Page {{ current }} of {{ total }}</p>
+  {%- endif %}
+
+  {% if paginator.next_page %}
+  <a class="pagination-btn" href="{{ paginator.next_page_path | relative_url }}" rel="next">
+    <span>Older</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+  </a>
+  {% else %}
+  <span class="pagination-btn is-disabled" aria-disabled="true">
+    <span>Older</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+  </span>
+  {% endif %}
+</nav>
+{%- endif -%}

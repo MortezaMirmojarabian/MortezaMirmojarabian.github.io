@@ -1,0 +1,32 @@
+{%- comment -%}
+  Search box, type filter and topic chips for the Blog page. Only shown when JavaScript is running
+  (head.html adds the "js" class), because /assets/js/blog-search.js does all the work.
+  The topics are the "tags:" you give your posts.
+{%- endcomment -%}
+<div class="blog-tools" data-blog-tools data-index="{{ '/search.json' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <form class="search" role="search" action="{{ '/blog/' | relative_url }}" method="get">
+    <label class="sr-only" for="blog-q">Search the blog</label>
+    <svg class="icon search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+    <input class="search-input" id="blog-q" type="search" name="q" placeholder="Search the blog, e.g. present perfect" autocomplete="off" spellcheck="false" enterkeyhint="search" maxlength="100">
+  </form>
+
+  <div class="filter-row">
+    <span class="filter-label" id="filter-type">Show</span>
+    <div class="chips" role="group" aria-labelledby="filter-type">
+      <button type="button" class="chip" data-type="" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-type="article" aria-pressed="false">Articles</button>
+      <button type="button" class="chip" data-type="exercise" aria-pressed="false">Exercises</button>
+    </div>
+  </div>
+
+  {%- if site.tags.size > 0 %}
+  <div class="filter-row">
+    <span class="filter-label" id="filter-topic">Topics</span>
+    <div class="chips" role="group" aria-labelledby="filter-topic" data-topics>
+      {%- for tag in site.tags %}
+      <button type="button" class="chip" data-topic="{{ tag[0] | slugify }}" data-name="{{ tag[0] | escape }}" data-count="{{ tag[1].size }}" aria-pressed="false">{{ tag[0] | escape }}<span class="chip-count" aria-hidden="true">{{ tag[1].size }}</span></button>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endif %}
+</div>

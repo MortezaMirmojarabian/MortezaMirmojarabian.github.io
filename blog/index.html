@@ -1,0 +1,40 @@
+---
+layout: default
+title: Blog
+description: Articles on the English language and interactive exercises for learners.
+---
+<section class="page-head">
+  <div class="container container-text">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-lead">Articles on the English language and interactive exercises for learners.</p>
+    <div class="page-actions">{% include follow-x.html class="btn-secondary btn-sm" %}</div>
+    {% include blog-search.html %}
+  </div>
+</section>
+
+<div class="container container-text blog-list">
+  {%- comment -%} The normal, paginated list. Hidden while a search or topic is active. {%- endcomment %}
+  <div data-blog-default>
+  <div class="post-list">
+    {%- for post in paginator.posts %}
+    {% include post-card.html post=post heading="h2" %}
+    {%- else %}
+    <p class="empty">No posts yet &mdash; the first one is on its way.</p>
+    {%- endfor %}
+  </div>
+
+  {% include pagination.html %}
+  </div>
+
+  {%- comment -%} Search / topic results, filled in by /assets/js/blog-search.js. {%- endcomment %}
+  <div class="blog-results" data-blog-results hidden>
+    <div class="results-bar">
+      <p class="results-status" role="status" data-status></p>
+      <button type="button" class="link-button" data-clear>Clear</button>
+    </div>
+    <div class="post-list" data-results></div>
+    <button type="button" class="btn btn-secondary results-more" data-more hidden>Show more</button>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/blog-search.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
