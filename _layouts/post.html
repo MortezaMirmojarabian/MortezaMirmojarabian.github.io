@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <span aria-hidden="true">&middot;</span>
+      {% if page.category == "exercises" %}
+        <span class="badge badge-exercise">Interactive exercise</span>
+      {% else %}
+        <span class="badge">Article</span>
+      {% endif %}
+    </div>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.tags %}
+      <div class="post-tags">
+        {% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    {% include share.html %}
+    <a class="back-to-blog" href="{{ '/blog/' | relative_url }}">&larr; Back to all posts</a>
+  </footer>
+</article>

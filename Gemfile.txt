@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+
+group :jekyll_plugins do
+  gem "jekyll-paginate", "~> 1.2"
+end
+
+# Windows and JRuby do not ship timezone data, so tzinfo-data may be needed
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
