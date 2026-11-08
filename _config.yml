@@ -15,9 +15,9 @@ author:
   name: Morteza Mirmojarabian
 
 # -- Contact & social: REPLACE THE THREE PLACEHOLDERS ---------------------------
-telegram: your_telegram_username          # no "@"   ->  https://t.me/your_telegram_username
-email: your.email@example.com
-x_username: your_x_username               # no "@"   ->  used by "Follow on X" and "Share on X"
+telegram: MortezaMirmojarabian          # no "@"   ->  https://t.me/your_telegram_username
+email: MortezaMirmojarabian@gmail.com
+x_username: Mirmojarabian               # no "@"   ->  used by "Follow on X" and "Share on X"
 
 # -- Address (GitHub Pages "user site") ---------------------------------------
 url: "https://mortezamirmojarabian.github.io"
