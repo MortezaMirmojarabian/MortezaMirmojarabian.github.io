@@ -797,6 +797,8 @@ a.pagination-btn:hover { background: var(--bg-muted); text-decoration: none; }
 }
 .share-title { font-size: 1.125rem; letter-spacing: -0.015em; }
 .share-text { margin: 0.25rem 0 0; color: var(--text-muted); font-size: 0.9375rem; }
+.post-discuss { margin: 0 0 1.25rem; color: var(--text-soft); }
+.post-discuss a { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 .share-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 .post-nav { display: grid; gap: 1rem; margin-top: 1rem; }
