@@ -6,7 +6,7 @@
    Question types (set `kind:` on the exercise, or on a single question to mix them):
      choice  multiple choice. Each option is a button-like radio; a blank (___) in the sentence fills itself in.
      fill    type the missing word(s). Case, curly quotes and extra spaces are ignored; several answers can be accepted.
-     order   build a sentence by tapping the shuffled words.
+     order   build a sentence by tapping the shuffled words. `answer` may be a list when more than one order is correct.
 */
 (function () {
   'use strict';
@@ -253,8 +253,19 @@
     };
   }
 
+  // Word-order answers are compared without capital letters or punctuation, so a sentence that starts with a
+  // different word ("We will stay..." / "If it rains...") still matches a listed alternative.
+  function sentenceKey(text) {
+    return norm(text).replace(/[.,!?;:"()]/g, '').replace(/\s+/g, ' ').trim();
+  }
+
   function buildOrder(q, i, changed) {
-    var answer = String(q.answer || '').trim().replace(/\s+/g, ' ');
+    // `answer` is one sentence, or a list of acceptable sentences that use the same words (the first one is the model answer).
+    var accepted = [].concat(q.answer === undefined || q.answer === null ? [] : q.answer)
+      .map(function (a) { return String(a).trim().replace(/\s+/g, ' '); })
+      .filter(function (a) { return a; });
+    var answer = accepted[0] || '';
+    var wanted = accepted.map(sentenceKey);
     var words = answer ? answer.split(' ') : [];
     var name = 'ex' + i;
     var order = mix(words.map(function (w, k) { return k; }));
@@ -306,8 +317,8 @@
       el: li,
       check: function () {
         var built = placed.map(function (k) { return words[k]; }).join(' ');
-        var ok = built === answer;
-        showFeedback(li, box, ok, placed.length === 0, [answer], q.explain);
+        var ok = wanted.indexOf(sentenceKey(built)) !== -1;
+        showFeedback(li, box, ok, placed.length === 0, accepted, q.explain);
         return { ok: ok, empty: placed.length === 0 };
       },
       reset: function () {
