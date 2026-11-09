@@ -115,7 +115,7 @@ layout: default
           <span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
           <span class="contact-text">
             <span class="contact-label">Email</span>
-            <span class="contact-value">{{ site.email }}</span>
+            <span class="contact-value">{{ site.email | replace: '@', '<wbr>@' }}</span>
           </span>
           <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
         </a>

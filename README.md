@@ -10,15 +10,15 @@ Follow and Share go to X only.
 ## 1. Put it online
 
 1. **Check your details** in `_config.yml` (see section 2).
-2. On GitHub, create a **public** repository named exactly `mortezamirmojarabian.github.io`.
-3. Upload everything in this folder to it (keep the folder structure, and include the hidden `.gitignore`):
+2. On GitHub, create a **public** repository named exactly `MortezaMirmojarabian.github.io` (your GitHub username followed by `.github.io`).
+3. Upload everything in this folder to it, keeping the folder structure. (`.gitignore` is optional: it only matters if you use Git on your computer, and the web uploader skips files whose names start with a dot.)
 
    ```bash
    git init
    git add .
    git commit -m "First version of my site"
    git branch -M main
-   git remote add origin https://github.com/mortezamirmojarabian/mortezamirmojarabian.github.io.git
+   git remote add origin https://github.com/MortezaMirmojarabian/MortezaMirmojarabian.github.io.git
    git push -u origin main
    ```
 
@@ -43,6 +43,7 @@ If you change a username, change it here only: every link on the site follows.
 | --- | --- |
 | change the About text | `index.html` (the `About` section) |
 | change the Telegram channel or group on the Home page | `index.html` (the `Community` section: the two links and names) |
+| change the "Join the discussion" line at the end of every post | `_layouts/post.html` (the `post-discuss` paragraph) |
 | add, remove or reorder projects | `_data/projects.yml` |
 | change my name, tagline or site description | `_config.yml` |
 | change how many posts show per page | `paginate:` in `_config.yml` (default 5) |
@@ -77,7 +78,7 @@ Handy extras inside a post:
 - A post dated in the future is not published until that date.
 
 A post with no `exercise:` block is labelled **Article**. A post with one is labelled **Exercise**.
-Both show **Share on X** and **Follow on X** at the bottom.
+Both end with a line inviting readers to comment in your Telegram group, then **Share on X** and **Follow on X**.
 
 ## 5. Topics and search (how a visitor finds every post on one subject)
 
@@ -163,7 +164,14 @@ exercise:
     - q: "Build a polite question."
       answer: "Could you tell me where the library is?"
       explain: "In an indirect question the word order is like a statement."
+    - q: "Build a sentence about a possible future."
+      answer:                                  # more than one correct order? list them
+        - "If it rains tomorrow, we will stay at home."     # the first one is the model answer
+        - "We will stay at home if it rains tomorrow."      # the same words, in another natural order
 ```
+
+When a sentence can be built in more than one natural way, list every way as above. Capital letters and punctuation are ignored when the
+reader's sentence is checked, but the alternatives must use exactly the same words.
 
 Notes:
 
