@@ -5,7 +5,7 @@ description: "Two look-alike words that trip up native speakers too. One rule an
 tags: [vocabulary, confusing words]
 level: B1
 ---
-*Affect* and *effect* sound almost the same, look almost the same, and mean almost the same thing, which is exactly why they cause so much trouble. The good news: one simple rule gives you the right word nine times out of ten.
+*Affect* and *effect* sound almost the same, look almost the same, and are closely related in meaning, which is exactly why they cause so much trouble. The good news: one simple rule gives you the right word nine times out of ten.
 
 ## The rule
 
