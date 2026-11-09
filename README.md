@@ -42,6 +42,7 @@ Until you replace them, the Contact cards show the placeholder text, and "Follow
 | I want to… | Edit |
 | --- | --- |
 | change the About text | `index.html` (the `About` section) |
+| change the Telegram channel or group on the Home page | `index.html` (the `Community` section: the two links and names) |
 | add, remove or reorder projects | `_data/projects.yml` |
 | change my name, tagline or site description | `_config.yml` |
 | change how many posts show per page | `paginate:` in `_config.yml` (default 5) |
@@ -187,7 +188,7 @@ Restart the command after editing `_config.yml`.
 
 ```text
 _config.yml               settings and the three placeholders
-index.html                Home (hero, About, Contact, Projects, Latest posts)
+index.html                Home (hero, About, Community, Projects, Latest posts, Contact)
 blog/index.html           Blog list with pagination, search box and topic buttons
 search.json               the list of posts the search reads (built automatically, don't edit)
 404.html                  "page not found"
@@ -222,7 +223,7 @@ Read them, keep what you like, and delete the rest. The About text on the Home p
 ## 11. Credits and licences
 
 - **Inter** typeface, SIL Open Font License 1.1: the licence text is in `assets/fonts/Inter-LICENSE.txt`.
-- **UI icons** (arrows, sun, moon, check, close, mail, code, library, search) come from [Lucide](https://lucide.dev), ISC licence:
+- **UI icons** (arrows, sun, moon, check, close, mail, code, library, search, users) come from [Lucide](https://lucide.dev), ISC licence:
   *Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.*
   Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 - **X and Telegram marks** are from [Simple Icons](https://simpleicons.org) (CC0 1.0). The names and logos belong to their owners and are used only to link to those services.
