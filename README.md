@@ -9,7 +9,7 @@ Follow and Share go to X only.
 
 ## 1. Put it online
 
-1. **Fill in the three placeholders** in `_config.yml` (see section 2).
+1. **Check your details** in `_config.yml` (see section 2).
 2. On GitHub, create a **public** repository named exactly `mortezamirmojarabian.github.io`.
 3. Upload everything in this folder to it (keep the folder structure, and include the hidden `.gitignore`):
 
@@ -27,15 +27,15 @@ Follow and Share go to X only.
 5. Wait a minute or two. The site is then live at <https://mortezamirmojarabian.github.io>.
    From now on, every commit you make rebuilds it automatically.
 
-## 2. The three placeholders (`_config.yml`)
+## 2. Your details (`_config.yml`)
 
 | Key | Put here | Used for |
 | --- | --- | --- |
-| `telegram` | your Telegram username, without `@` | the Telegram card in **Contact** |
-| `email` | your public e-mail address | the Email card in **Contact** |
+| `telegram` | your Telegram username, without `@` | the Telegram cards in **Contact** and in the footer |
+| `email` | your public e-mail address | the Email cards in **Contact** and in the footer |
 | `x_username` | your X (Twitter) username, without `@` | **Follow on X** buttons, **Share on X** (adds `via`), and the X link-preview tags |
 
-Until you replace them, the Contact cards show the placeholder text, and "Follow on X" points to a profile that doesn't exist.
+If you change a username, change it here only: every link on the site follows.
 
 ## 3. Everyday editing
 
@@ -187,7 +187,7 @@ Restart the command after editing `_config.yml`.
 ## 8. What's where
 
 ```text
-_config.yml               settings and the three placeholders
+_config.yml               settings: name, description, Telegram, email, X username
 index.html                Home (hero, About, Community, Projects, Latest posts, Contact)
 blog/index.html           Blog list with pagination, search box and topic buttons
 search.json               the list of posts the search reads (built automatically, don't edit)
@@ -222,6 +222,7 @@ Read them, keep what you like, and delete the rest. The About text on the Home p
 
 ## 11. Credits and licences
 
+- **This site's code** (templates, styles and scripts) is under the MIT licence: see `LICENSE`. The articles and exercises in `_posts/` are © 2026 Morteza Mirmojarabian, all rights reserved, unless a post says otherwise. If you would rather share them, say so in `LICENSE` or in this section (for example under CC BY 4.0).
 - **Inter** typeface, SIL Open Font License 1.1: the licence text is in `assets/fonts/Inter-LICENSE.txt`.
 - **UI icons** (arrows, sun, moon, check, close, mail, code, library, search, users) come from [Lucide](https://lucide.dev), ISC licence:
   *Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.*
