@@ -86,7 +86,7 @@ Both end with a line inviting readers to comment in your Telegram group, then **
 
 Nobody has to page through the whole blog. At the top of the **Blog** page visitors get:
 
-- a **search box**. It looks at each post's title, description, topics and first 400 or so words, plus the questions and
+- a **search box**. It looks at each post's title, description, topics and full text, plus the questions and
   explanations of exercises. It ignores capital letters and accents, matches the beginnings of words (`pres` finds *present*),
   treats *tense* and *tenses* alike, and wants every word typed to be found. Posts that are *about* the words (in the title
   or the topics) come before posts that only mention them.
@@ -122,9 +122,11 @@ In a link the topic is the tag in lowercase with dashes for spaces: `present per
 
 - You do nothing to make the search work. `search.json` (the list of posts it reads) is built with the site, and the Blog page
   downloads it only when a visitor first uses the search box or a topic button, so the page itself stays light.
-- Only the first 400 or so words of a post are searched, so put the important words in the title, the description and the tags.
-- Everything runs in the visitor's browser, with no outside service. Tested with 300 posts: the list was about 280 KB
-  compressed, and a search took a few milliseconds.
+- The whole post is searched, so a word near the end of a long article is found too. Posts that are *about* the words still come first, so a clear title, description and tags are still worth writing.
+- Everything runs in the visitor's browser, with no outside service. Each post adds roughly 2 to 4 KB to the list
+  (compressed), depending on its length. Tested with 300 long posts of about 1,900 words each: the list was about 1.1 MB compressed
+  and searching stayed instant. It is downloaded once, on the first search. If it ever becomes too heavy, `search.json` explains how to
+  limit each post to its first 3,000 words or so.
 - Without JavaScript the search box and buttons are hidden, and the ordinary list with its page numbers still works.
 - The page numbers at the bottom of the list stay short however many pages there are: the first, the last and the ones around the current page.
 
@@ -228,7 +230,7 @@ Read them, keep what you like, and delete the rest. The About text on the Home p
 - **A change doesn't show up:** open the repository's **Actions** tab to see whether the build finished (a red cross shows the error), then refresh with Ctrl+F5.
 - **A post is missing:** check the file name pattern (`2026-11-10-title.md`), that the front matter starts and ends with `---`, and that the date isn't in the future.
 - **Two topic buttons for the same subject:** the tags are spelled differently in different posts (`present perfect` and `present perfect tense`). Pick one spelling and use it in every post.
-- **A new post doesn't turn up in the search:** wait until the build has finished (Actions tab), then refresh with Ctrl+F5. Search reads only the first 400 or so words, so check that the title, description and tags contain the words people would type.
+- **A new post doesn't turn up in the search:** wait until the build has finished (Actions tab), then refresh with Ctrl+F5. If it still doesn't appear, check that the words people would type really are in the post.
 
 ## 11. Credits and licences
 

@@ -6,8 +6,10 @@ sitemap: false
   /assets/js/blog-search.js downloads it only when a visitor starts searching or picks a topic.
     type    "exercise" or "article"
     slugs   the post's topics as web-safe words, joined with |
-    text    the start of the post (about 400 words) plus the exercise questions, used for matching
+    text    the whole post plus the exercise questions and explanations, used for matching
     card    the finished list entry, reused as it is to show the results
+  Only if the list ever becomes too heavy (many hundreds of long posts): add  | truncate: 20000, ''  after
+  normalize_whitespace on the "text" line below, which keeps about the first 3,000 words of each post.
 {%- endcomment -%}
 [
 {%- for post in site.posts -%}
@@ -25,7 +27,7 @@ sitemap: false
   "level": {{ post.level | jsonify }},
   "type": {{ kind | jsonify }},
   "date": {{ post.date | date: '%Y-%m-%d' | jsonify }},
-  "text": {{ text | normalize_whitespace | truncate: 2500, '' | jsonify }},
+  "text": {{ text | normalize_whitespace | jsonify }},
   "card": {{ card | normalize_whitespace | jsonify }}
 }{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
