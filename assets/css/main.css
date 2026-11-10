@@ -443,9 +443,9 @@ img { max-width: 100%; height: auto; }
   border-radius: var(--radius);
   background: var(--bg);
   color: var(--text);
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
-.contact-item:hover { border-color: var(--line-strong); background: var(--bg-soft); text-decoration: none; }
+.contact-item:hover { border-color: var(--line-strong); background: var(--bg-soft); box-shadow: var(--shadow); transform: translateY(-2px); text-decoration: none; }
 
 .contact-icon {
   display: grid;
@@ -1038,7 +1038,7 @@ a.pagination-btn:hover { background: var(--bg-muted); text-decoration: none; }
   *,
   *::before,
   *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
-  .project-card:hover { transform: none; }
+  .project-card:hover, .contact-item:hover { transform: none; }
 }
 
 @media print {
