@@ -17,6 +17,10 @@ author:
 # -- Contact & social ---------------------------------------------------------
 telegram: MortezaMirmojarabian            # no "@"   ->  https://t.me/MortezaMirmojarabian
 email: MortezaMirmojarabian@gmail.com
+telegram_channel: EnglishLanguageGuide    # no "@"   ->  https://t.me/EnglishLanguageGuide
+telegram_channel_name: English Language Guide
+telegram_group: EnglishDiscussionForum    # no "@"   ->  https://t.me/EnglishDiscussionForum
+telegram_group_name: English Discussion Forum
 x_username: Mirmojarabian                 # no "@"   ->  used by "Follow on X" and "Share on X"
 
 # -- Address (GitHub Pages "user site") ---------------------------------------

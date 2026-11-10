@@ -21,29 +21,29 @@ layout: default
   </div>
 </section>
 
-{% comment %} COMMUNITY (the Telegram channel and its discussion group; to change them, edit the links and names below) {% endcomment %}
+{% comment %} COMMUNITY (the Telegram channel and its discussion group; set them in _config.yml) {% endcomment %}
 <section class="container row" id="community" aria-labelledby="community-title">
   <h2 class="row-label" id="community-title">Community</h2>
   <div class="row-body">
     <p class="row-intro">Follow the channel for learning material, and join the group to ask questions and talk with other learners.</p>
     <ul class="contact-grid">
       <li>
-        <a class="contact-item" href="https://t.me/EnglishLanguageGuide" target="_blank" rel="noopener noreferrer">
+        <a class="contact-item" href="https://t.me/{{ site.telegram_channel }}" target="_blank" rel="noopener noreferrer">
           <span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-telegram"/></svg></span>
           <span class="contact-text">
             <span class="contact-label">Channel</span>
-            <span class="contact-value">English Language Guide</span>
+            <span class="contact-value">{{ site.telegram_channel_name | escape }}</span>
           </span>
           <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           <span class="sr-only">(opens in a new tab)</span>
         </a>
       </li>
       <li>
-        <a class="contact-item" href="https://t.me/EnglishDiscussionForum" target="_blank" rel="noopener noreferrer">
+        <a class="contact-item" href="https://t.me/{{ site.telegram_group }}" target="_blank" rel="noopener noreferrer">
           <span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>
           <span class="contact-text">
             <span class="contact-label">Group</span>
-            <span class="contact-value">English Discussion Forum</span>
+            <span class="contact-value">{{ site.telegram_group_name | escape }}</span>
           </span>
           <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           <span class="sr-only">(opens in a new tab)</span>

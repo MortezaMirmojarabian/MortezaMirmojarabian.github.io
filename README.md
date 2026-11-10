@@ -32,6 +32,8 @@ Follow and Share go to X only.
 | Key | Put here | Used for |
 | --- | --- | --- |
 | `telegram` | your Telegram username, without `@` | the Telegram cards in **Contact** and in the footer |
+| `telegram_channel`, `telegram_channel_name` | your channel's username (without `@`) and the name to show | the **Channel** card in **Community** |
+| `telegram_group`, `telegram_group_name` | your group's username (without `@`) and the name to show | the **Group** card in **Community** and the "comment" line at the end of every post |
 | `email` | your public e-mail address | the Email cards in **Contact** and in the footer |
 | `x_username` | your X (Twitter) username, without `@` | **Follow on X** buttons, **Share on X** (adds `via`), and the X link-preview tags |
 
@@ -42,7 +44,7 @@ If you change a username, change it here only: every link on the site follows.
 | I want to… | Edit |
 | --- | --- |
 | change the About text | `index.html` (the `About` section) |
-| change the Telegram channel or group on the Home page | `index.html` (the `Community` section: the two links and names) |
+| change the Telegram channel or group | `_config.yml` (`telegram_channel`, `telegram_group` and their names): it updates the Home page and every post |
 | change the "Join the discussion" line at the end of every post | `_layouts/post.html` (the `post-discuss` paragraph) |
 | add, remove or reorder projects | `_data/projects.yml` |
 | change my name, tagline or site description | `_config.yml` |
