@@ -266,7 +266,18 @@
       .filter(function (a) { return a; });
     var answer = accepted[0] || '';
     var wanted = accepted.map(sentenceKey);
-    var words = answer ? answer.split(' ') : [];
+    // The word tiles carry no punctuation and no sentence-initial capital, so they fit every accepted order. The sentence line adds
+    // the capital letter to its first word and the final punctuation mark by itself.
+    var ending = (/[.!?]+$/.exec(answer) || [''])[0];
+    function bare(w) { return w.replace(/[.,!?;:"()]/g, ''); }
+    var names = {};   // words capitalized in the middle of a sentence (names, "I") keep their capital everywhere
+    accepted.forEach(function (a) {
+      a.split(' ').forEach(function (w, n) { w = bare(w); if (n > 0 && /^[A-Z]/.test(w)) names[w] = true; });
+    });
+    var words = answer ? answer.split(' ').map(bare).filter(function (w) { return w; }) : [];
+    if (words.length && !names[words[0]] && !/^I($|['\u2019])/.test(words[0]) && (words[0].match(/[A-Z]/g) || []).length < 2) {
+      words[0] = words[0].charAt(0).toLowerCase() + words[0].slice(1);
+    }
     var name = 'ex' + i;
     var order = mix(words.map(function (w, k) { return k; }));
     var placed = [];
@@ -279,6 +290,7 @@
     var bank = el('div', { class: 'ex-bank', role: 'group', 'aria-label': 'Available words' });
     var clear = el('button', { type: 'button', class: 'ex-clear', text: 'Clear', hidden: true });
     var box = el('div', { class: 'ex-feedback', hidden: true });
+    var endMark = el('span', { class: 'ex-end', 'aria-hidden': 'true', text: ending });
 
     var buttons = words.map(function (word, k) {
       var button = el('button', { type: 'button', class: 'ex-token', text: word });
@@ -294,8 +306,15 @@
     });
 
     function render() {
-      placed.forEach(function (k) { line.appendChild(buttons[k]); });
-      order.forEach(function (k) { if (placed.indexOf(k) === -1) bank.appendChild(buttons[k]); });
+      placed.forEach(function (k, n) {
+        buttons[k].textContent = n === 0 ? words[k].charAt(0).toUpperCase() + words[k].slice(1) : words[k];
+        line.appendChild(buttons[k]);
+      });
+      if (placed.length && ending) line.appendChild(endMark);
+      else if (endMark.parentNode) endMark.parentNode.removeChild(endMark);
+      order.forEach(function (k) {
+        if (placed.indexOf(k) === -1) { buttons[k].textContent = words[k]; bank.appendChild(buttons[k]); }
+      });
       clear.hidden = placed.length === 0;
     }
 
