@@ -1,6 +1,6 @@
 /* ==========================================================================
    Theme: shades of white, black and gray, with blue where it is useful.
-   Light and dark, no dependencies. Colours live in the tokens below, so
+   Light and dark, no dependencies. Colors live in the tokens below, so
    re-theming the whole site means editing a handful of values.
 
    1 Fonts   2 Tokens   3 Base   4 Layout   5 Header   6 Buttons   7 Home
@@ -795,7 +795,7 @@ a.pagination-btn:hover { background: var(--bg-muted); text-decoration: none; }
 .prose p.ok::before { content: "\2713"; color: var(--ok); }
 .prose p.no::before { content: "\2717"; color: var(--bad); }
 
-/* End of post: share + follow, and neighbours */
+/* End of post: share + follow, and neighbors */
 .post-footer { margin-top: 3.5rem; }
 
 .share-card {
