@@ -977,6 +977,7 @@ a.pagination-btn:hover { background: var(--bg-muted); text-decoration: none; }
   transition: border-color 0.15s ease;
 }
 .ex-token:hover { border-color: var(--text-muted); }
+.ex-end { align-self: center; margin-left: -0.3rem; color: var(--text-soft); font-weight: 600; }
 .ex-line .ex-token { border-color: var(--blue-line); background: var(--blue-soft); color: var(--blue-text); }
 
 .ex-line-tools { min-height: 1.25rem; margin-top: 0.5rem; }
