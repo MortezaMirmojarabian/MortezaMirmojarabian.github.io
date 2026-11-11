@@ -4,7 +4,7 @@ layout: default
 {%- comment -%} Words are counted here (not in post-meta) so the reading time uses the rendered body. {%- endcomment -%}
 {%- assign words = content | strip_html | number_of_words -%}
 
-{%- comment -%} Find the newer / older neighbours (site.posts is newest first). {%- endcomment -%}
+{%- comment -%} Find the newer / older neighbors (site.posts is newest first). {%- endcomment -%}
 {%- assign newer = nil -%}
 {%- assign older = nil -%}
 {%- for p in site.posts -%}
