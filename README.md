@@ -159,7 +159,7 @@ exercise:
       explain: "*Since 2015* needs the present perfect."
 ```
 
-**Word order** (the words of `answer` are shuffled; the reader taps them into place. Punctuation stays attached to its word):
+**Word order** (the words of `answer` are shuffled; the reader taps them into place. The tiles show the words without punctuation and without the capital letter that starts the sentence; the sentence line adds the capital to its first word and the final `.`, `?` or `!` by itself. Names and *I* keep their capital letters, except a name that is the very first word of the answer, which shows in lowercase until it is placed first):
 
 ```yaml
 exercise:
