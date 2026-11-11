@@ -1,4 +1,4 @@
-/* Site-wide behaviour: the light / dark theme toggle and keyboard-scrollable wide tables. No dependencies.
+/* Site-wide behavior: the light / dark theme toggle and keyboard-scrollable wide tables. No dependencies.
    The theme is applied before first paint by a tiny inline script in _includes/head.html. */
 (function () {
   'use strict';
@@ -25,7 +25,7 @@
     }
   }
 
-  // Sync the button label and browser colour with whatever the head script chose.
+  // Sync the button label and browser color with whatever the head script chose.
   apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
 
   if (toggle) {
