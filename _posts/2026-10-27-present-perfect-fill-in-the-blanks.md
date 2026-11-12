@@ -13,7 +13,7 @@ exercise:
       explain: "*Since 2015* shows a situation that started in the past and continues now, so we use the present perfect."
     - q: "She ___ (not / finish) her homework yet."
       answer: ["has not finished", "hasn't finished"]
-      explain: "*Yet* in a negative sentence goes with the present perfect: *has not (hasn't) finished*."
+      explain: "*Yet* in a negative sentence goes with the present perfect: *has not (hasn't) finished*. British English also says *She's not finished*, but in American English we say *hasn't finished*."
     - q: "Have you ever ___ (visit) Isfahan?"
       answer: "visited"
       explain: "*Ever* asks about experience up to now. After *have you ever*, we use the past participle."
