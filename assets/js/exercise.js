@@ -4,7 +4,7 @@
    hands it to this script as JSON, and the script builds the form inside [data-exercise-body].
 
    Question types (set `kind:` on the exercise, or on a single question to mix them):
-     choice  multiple choice. Each option is a button-like radio; a blank (___) in the sentence fills itself in.
+     choice  multiple choice. Each option is a button-like radio; a blank (___) in the sentence fills itself in (the option "no article" shows a dash).
      fill    type the missing word(s). Case, curly quotes and extra spaces are ignored; several answers can be accepted.
      order   build a sentence by tapping the shuffled words. `answer` may be a list when more than one order is correct.
 */
@@ -180,7 +180,14 @@
       input.addEventListener('change', function () {
         clearMarks();
         if (blank) {
-          blank.textContent = option;
+          blank.textContent = '';
+          if (/^no article$/i.test(String(option).trim())) {
+            // "No article" means nothing goes in the blank: show a dash, and let screen readers hear the option
+            blank.appendChild(el('span', { 'aria-hidden': 'true', text: '\u2014' }));
+            blank.appendChild(el('span', { class: 'sr-only', text: option }));
+          } else {
+            blank.textContent = option;
+          }
           blank.classList.add('is-filled');
         }
         changed();
