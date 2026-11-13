@@ -135,7 +135,7 @@ In a link the topic is the tag in lowercase with dashes for spaces: `present per
 Add an `exercise:` block to the front matter. The page then shows a "Practice" box with **Check answers** and **Start over**,
 explains every answer, and offers **Share my score on X**. Everything runs in the reader's browser.
 
-**Multiple choice** (`___` marks the blank, which fills itself in when an option is picked):
+**Multiple choice** (`___` marks the blank, which fills itself in when an option is picked; an option called "no article" shows a dash in the blank):
 
 ```yaml
 exercise:
