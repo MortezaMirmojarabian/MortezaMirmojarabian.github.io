@@ -67,7 +67,7 @@ description: "One or two sentences. Shown in the blog list and in link previews.
 tags: [vocabulary, confusing words]   # become topic buttons on the Blog page (see section 5)
 level: B1                         # optional, shown as "Level B1"
 # label: "Story"                  # optional, replaces the "Article" badge
-# image: /assets/img/my-pic.png   # optional, link-preview picture for this post
+image: /assets/img/posts/affect-vs-effect.png   # link-preview picture (see "Preview cards" below)
 ---
 Write in Markdown here. Tables, lists, **bold**, *italic*, headings (start at `##`) and images all work.
 ```
@@ -78,6 +78,12 @@ Handy extras inside a post:
 - Example sentences: `{: .ok}` (green, correct) and `{: .no}` (red, incorrect) after a paragraph.
 - A "show the answers" box: `<details markdown="1"><summary>Show the answers</summary> … </details>`.
 - A post dated in the future is not published until that date.
+
+**Preview cards.** Each post has its own 1200 × 630 picture (title, Article/Exercise badge, level) that shows when the link is
+shared on X or Telegram. To make one for a new post, run `python3 tools/make-cards.py` (needs `pip install pyyaml playwright`
+and `playwright install chromium`), which writes `assets/img/posts/<post-name>.png`, then add the `image:` line shown above.
+A post without `image:` falls back to `assets/img/og-default.png`. Platforms cache previews, so a card you change after sharing may
+look old for a while.
 
 A post with no `exercise:` block is labeled **Article**. A post with one is labeled **Exercise**.
 Both end with a line inviting readers to comment in your Telegram group, then **Share on X** and **Follow on X**.
