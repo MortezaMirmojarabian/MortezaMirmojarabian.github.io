@@ -218,12 +218,18 @@ assets/js/site.js         theme toggle (and keyboard scrolling for wide tables)
 assets/js/blog-search.js  search box, topic buttons and results on the Blog page
 assets/js/exercise.js     the exercise engine
 assets/fonts/             Inter, self-hosted
-assets/img/               favicons, header logo, link-preview picture
+assets/img/               favicons, header logo, default link-preview picture
+assets/img/posts/         one link-preview card per post (made by tools/make-cards.py)
+tools/                    make-cards.py, the card maker (not published on the site)
+google9eadca7802cbe987.html  Google Search Console's ownership check: keep it where it is
 Gemfile                   for previewing on your own computer
 ```
 
 Only plugins that GitHub Pages supports are used: `jekyll-paginate`, `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed`.
 A feed (`/feed.xml`) and a sitemap (`/sitemap.xml`) are generated for you.
+
+Keep `google9eadca7802cbe987.html` in the top folder. Google Search Console uses it to confirm that the site is yours and
+checks it again from time to time. It is served as it is and left out of the sitemap (see `defaults:` in `_config.yml`).
 
 ## 9. The sample content
 

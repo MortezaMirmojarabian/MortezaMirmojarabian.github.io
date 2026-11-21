@@ -54,6 +54,11 @@ defaults:
       type: posts
     values:
       layout: post
+  # Google's ownership-check file is served as it is, but kept out of the sitemap.
+  - scope:
+      path: "google9eadca7802cbe987.html"
+    values:
+      sitemap: false
 
 exclude:
   - Gemfile
