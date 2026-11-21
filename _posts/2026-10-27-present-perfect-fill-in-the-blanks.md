@@ -1,6 +1,7 @@
 ---
 title: "Present Perfect: Fill in the Blanks"
 date: 2026-10-27
+image: /assets/img/posts/present-perfect-fill-in-the-blanks.png
 description: "Eight sentences to practice the present perfect with for, since, already, yet, ever and never."
 tags: [grammar, tenses, present perfect]
 level: B1

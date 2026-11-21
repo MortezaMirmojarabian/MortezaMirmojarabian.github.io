@@ -1,6 +1,7 @@
 ---
 title: "Affect vs. Effect: A Simple Rule That Works Almost Every Time"
 date: 2026-10-30
+image: /assets/img/posts/affect-vs-effect.png
 description: "Two look-alike words that trip up native speakers too. One rule and one trick are all you need."
 tags: [vocabulary, confusing words]
 level: B1

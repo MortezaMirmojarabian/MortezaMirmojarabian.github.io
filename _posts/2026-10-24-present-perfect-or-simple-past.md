@@ -1,6 +1,7 @@
 ---
 title: "Present Perfect or Simple Past? How to Choose"
 date: 2026-10-24
+image: /assets/img/posts/present-perfect-or-simple-past.png
 description: "A practical way to decide between “I have lived here” and “I lived there”, with signal words and a very common mistake."
 tags: [grammar, tenses, present perfect, simple past]
 level: B1

@@ -1,6 +1,7 @@
 ---
 title: "How to Learn Phrasal Verbs Without Memorizing Long Lists"
 date: 2026-10-10
+image: /assets/img/posts/learning-phrasal-verbs.png
 description: "Phrasal verbs are everywhere in everyday English. Four habits that work better than copying a list."
 tags: [vocabulary, phrasal verbs]
 level: B1

@@ -1,6 +1,7 @@
 ---
 title: "Build the Sentence: Word Order Practice"
 date: 2026-10-20
+image: /assets/img/posts/build-the-sentence.png
 description: "Six scrambled sentences to rebuild: statements, questions, adverbs and conditionals."
 tags: [grammar, word order]
 level: B1

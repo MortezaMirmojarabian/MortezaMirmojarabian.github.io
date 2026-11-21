@@ -1,6 +1,7 @@
 ---
 title: "Five Collocations That Make Your English Sound Natural"
 date: 2026-10-18
+image: /assets/img/posts/five-collocations-that-sound-natural.png
 description: "Native speakers say “heavy rain”, not “strong rain”. Learn words in pairs and your English will sound more natural."
 tags: [vocabulary, collocations]
 level: B1

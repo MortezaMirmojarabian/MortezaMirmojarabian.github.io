@@ -1,6 +1,7 @@
 ---
 title: "Articles: a, an, or the?"
 date: 2026-11-01
+image: /assets/img/posts/articles-a-an-or-the.png
 description: "Eight quick questions to practice choosing between a, an, the, and no article at all."
 tags: [grammar, articles]
 level: A2
