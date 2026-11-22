@@ -86,7 +86,9 @@ A post without `image:` falls back to `assets/img/og-default.png`. Platforms cac
 look old for a while.
 
 A post with no `exercise:` block is labeled **Article**. A post with one is labeled **Exercise**.
-Both end with a line inviting readers to comment in your Telegram group, then **Share on X** and **Follow on X**.
+Both end with a line inviting readers to comment in your Telegram group, then **Share on Telegram** and **Share on X**
+buttons (they use the plain share links of each app: no scripts, no tracking). **Follow on X** is in the footer and on
+Home and Blog, so it isn't repeated at the end of a post.
 
 ## 5. Topics and search (how a visitor finds every post on one subject)
 
@@ -139,7 +141,7 @@ In a link the topic is the tag in lowercase with dashes for spaces: `present per
 ## 6. Interactive exercises
 
 Add an `exercise:` block to the front matter. The page then shows a "Practice" box with **Check answers** and **Start over**,
-explains every answer, and offers **Share my score on X**. Everything runs in the reader's browser.
+explains every answer, and offers **Share my score on Telegram** and **Share my score on X**. Everything runs in the reader's browser.
 
 **Multiple choice** (`___` marks the blank, which fills itself in when an option is picked; an option called "no article" shows a dash in the blank):
 

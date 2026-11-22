@@ -375,14 +375,29 @@
     return item;
   });
 
-  function shareLink(score, total) {
+  // What a shared score says and which page it points to. The same words go to Telegram and to X.
+  function sharePayload(score, total) {
     var heading = document.querySelector('.post-heading') || document.querySelector('h1');
     var title = ((heading && heading.textContent) || document.title).trim();
     var canonical = document.querySelector('link[rel="canonical"]');
-    var url = canonical && canonical.href ? canonical.href : location.href.split('#')[0];
-    var text = 'I scored ' + score + '/' + total + ' on “' + title + '”';
-    return 'https://x.com/intent/post?text=' + encodeURIComponent(text) +
-      '&url=' + encodeURIComponent(url) + (via ? '&via=' + encodeURIComponent(via) : '');
+    return {
+      text: 'I scored ' + score + '/' + total + ' on “' + title + '”',
+      url: canonical && canonical.href ? canonical.href : location.href.split('#')[0]
+    };
+  }
+
+  function telegramLink(payload) {
+    return 'https://t.me/share/url?url=' + encodeURIComponent(payload.url) + '&text=' + encodeURIComponent(payload.text);
+  }
+
+  function xLink(payload) {
+    return 'https://x.com/intent/post?text=' + encodeURIComponent(payload.text) +
+      '&url=' + encodeURIComponent(payload.url) + (via ? '&via=' + encodeURIComponent(via) : '');
+  }
+
+  function shareButton(style, iconId, label, href) {
+    return el('a', { class: 'btn ' + style, href: href, target: '_blank', rel: 'noopener noreferrer' },
+      [icon(iconId), el('span', { text: label }), el('span', { class: 'sr-only', text: '(opens in a new tab)' })]);
   }
 
   function showResult(score, total, blanks) {
@@ -408,9 +423,11 @@
       el('p', { class: 'ex-message', text: message })
     ]));
     if (blanks < total) {
-      result.appendChild(el('a', {
-        class: 'btn btn-primary', href: shareLink(score, total), target: '_blank', rel: 'noopener noreferrer'
-      }, [icon('i-x'), el('span', { text: 'Share my score on X' }), el('span', { class: 'sr-only', text: '(opens in a new tab)' })]));
+      var payload = sharePayload(score, total);
+      result.appendChild(el('div', { class: 'ex-share' }, [
+        shareButton('btn-primary', 'i-telegram', 'Share my score on Telegram', telegramLink(payload)),
+        shareButton('btn-secondary', 'i-x', 'Share my score on X', xLink(payload))
+      ]));
     }
     result.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
   }

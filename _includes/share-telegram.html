@@ -1,0 +1,6 @@
+{%- comment -%}Share the current page on Telegram (the reader picks the chat). Uses Telegram's plain share link: no scripts, no tracking. Pass class="btn-secondary" for the outlined style.{%- endcomment -%}
+<a class="btn {{ include.class | default: 'btn-primary' }}" href="https://t.me/share/url?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">
+  <svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg>
+  <span>Share on Telegram</span>
+  <span class="sr-only">(opens in a new tab)</span>
+</a>

@@ -1009,6 +1009,10 @@ a.pagination-btn:hover { background: var(--bg-muted); text-decoration: none; }
 .ex-score { margin: 0; color: var(--text-muted); }
 .ex-score strong { color: var(--text); font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; }
 .ex-message { margin: 0.15rem 0 0; color: var(--text-soft); }
+.ex-share { display: flex; flex-wrap: wrap; gap: 0.75rem; max-width: 100%; }
+/* On a very narrow phone "Share my score on Telegram" is wider than the box, so these two labels may wrap */
+.ex-share .btn { max-width: 100%; height: auto; min-height: 2.75rem; padding-block: 0.6rem; white-space: normal; line-height: 1.25; text-align: center; text-wrap: balance; }
+.ex-share .btn .icon { flex: none; }
 
 @media (max-width: 480px) {
   .ex-options,
