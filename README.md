@@ -230,6 +230,10 @@ Gemfile                   for previewing on your own computer
 Only plugins that GitHub Pages supports are used: `jekyll-paginate`, `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed`.
 A feed (`/feed.xml`) and a sitemap (`/sitemap.xml`) are generated for you.
 
+The SEO and feed plugins write their tags the old XHTML way (`<meta ... />`). `_includes/head.html` trims those slashes so that
+the W3C validator ([validator.w3.org/nu](https://validator.w3.org/nu/)) shows a completely empty report. It touches only those tags, never the
+structured data (JSON-LD), and it does nothing if a plugin stops writing the slashes.
+
 Keep `google9eadca7802cbe987.html` in the top folder. Google Search Console uses it to confirm that the site is yours and
 checks it again from time to time. It is served as it is and left out of the sitemap (see `defaults:` in `_config.yml`).
 

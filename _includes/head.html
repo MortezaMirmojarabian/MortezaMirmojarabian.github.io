@@ -1,5 +1,16 @@
 {%- assign x_ready = false -%}
 {%- if site.x_username and site.x_username != 'your_x_username' -%}{%- assign x_ready = true -%}{%- endif -%}
+{%- comment -%}
+  The SEO and feed plugins write XHTML-style tags (<meta ... />). In HTML the slash does nothing, and the W3C
+  validator adds a "Trailing slash on void elements has no effect" note for every such tag. So their output is
+  captured here and the slashes are trimmed, which keeps the validator report empty. The JSON-LD block is passed
+  through exactly as the plugin wrote it (it holds free text, so it is never edited). If a plugin ever stops writing
+  the slash, this simply does nothing.
+{%- endcomment -%}
+{%- capture seo_html -%}{% seo %}{%- endcapture -%}
+{%- capture feed_html -%}{% feed_meta %}{%- endcapture -%}
+{%- assign ld_open = '<script type="application/ld+json">' -%}
+{%- assign seo_head = seo_html | split: ld_open | first -%}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
@@ -17,8 +28,8 @@
     if (m && t === 'dark') m.setAttribute('content', '#09090b');
   })();
 </script>
-{% seo %}
-{% feed_meta %}
+{{ seo_head | replace: ' />', '>' }}{{ seo_html | remove_first: seo_head }}
+{{ feed_html | replace: ' />', '>' }}
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/32x32.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/192x192.png' | relative_url }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/180x180.png' | relative_url }}">

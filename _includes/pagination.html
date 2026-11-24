@@ -3,6 +3,10 @@
   Up to 9 pages are all listed. With more, only the first, the last and the pages around the current one are
   listed, with "…" in between, so the row stays short however many posts there are. On a phone (with more than
   5 pages) the numbers give way to "Page 6 of 60" between the two arrows.
+  On the first and last page the missing arrow is drawn as a dimmed placeholder so the row doesn't shift. It is
+  exposed as a disabled link: role="link" + aria-disabled="true". Keep the role: aria-disabled alone is not valid
+  on a plain span (its role is "generic"), and the W3C validator warns about it. It is not focusable, so keyboard
+  users skip it.
 {%- endcomment -%}
 {%- assign total = paginator.total_pages -%}
 {%- assign current = paginator.page -%}
@@ -13,7 +17,7 @@
     <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span>Newer</span>
   </a>
   {% else %}
-  <span class="pagination-btn is-disabled" aria-disabled="true">
+  <span class="pagination-btn is-disabled" role="link" aria-disabled="true">
     <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span>Newer</span>
   </span>
   {% endif %}
@@ -54,7 +58,7 @@
     <span>Older</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
   </a>
   {% else %}
-  <span class="pagination-btn is-disabled" aria-disabled="true">
+  <span class="pagination-btn is-disabled" role="link" aria-disabled="true">
     <span>Older</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
   </span>
   {% endif %}
