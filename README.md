@@ -3,7 +3,7 @@
 A plain, fast, two-page website (**Home** and **Blog**) built with [Jekyll](https://jekyllrb.com) for GitHub Pages.
 Articles and interactive exercises for English learners, a search box with topic buttons so that visitors can find every post
 on a subject (for example, the present perfect), a light/dark theme, and no trackers or third-party requests.
-Follow and Share go to X only.
+Visitors can follow you on X, share each post on Telegram or X, and join your Telegram channel and discussion group.
 
 ---
 
@@ -162,12 +162,14 @@ exercise:
 exercise:
   kind: fill
   questions:
-    - q: "I ___ (live) in Chicago since 2015."
-      answer: ["have lived", "'ve lived", "have been living", "'ve been living"]   # every correct answer
+    - q: "I ___ (own) this car since 2015."
+      answer: ["have owned", "'ve owned"]   # every correct answer that uses the structure being practiced
       explain: "*Since 2015* needs the present perfect."
 ```
 
-Before you publish, ask whether a learner could give another correct answer (above, `have been living` is as good as `have lived`) and list it too.
+Before you publish, ask whether a learner could give another correct answer. List every answer that uses the structure the exercise practices: full and short forms, and
+regional variants such as *hasn't finished* and *'s not finished*. If a different structure would also be natural in the sentence (*have been living* in a present perfect
+simple exercise, for example), don't accept it: choose a verb that doesn't allow it (above, *own* instead of *live*), so that nobody is marked wrong for a correct sentence.
 Tell learners to type only the missing words: whatever is already printed in the sentence is not part of the answer.
 
 **Word order** (the words of `answer` are shuffled; the reader taps them into place. The tiles show the words without punctuation and without the capital letter that starts the sentence; the sentence line adds the capital to its first word and the final `.`, `?` or `!` by itself. Names and *I* keep their capital letters, except a name that is the very first word of the answer, which shows in lowercase until it is placed first):
@@ -195,7 +197,7 @@ Notes:
   Mark a word with italics (`*word*`) rather than single quotation marks.
 - You can mix types: leave out `kind:` at the top and give each question its own `kind: choice | fill | order`.
 - In YAML, wrap any text that contains a colon (`:`) in double quotes, and indent with spaces (never tabs).
-- If a question list doesn't appear, check the indentation first. The three sample exercises in `_posts/` are good templates.
+- If a question list doesn't appear, check the indentation first. The three exercises already in `_posts/` are good templates.
 
 ## 7. Preview it on your computer (optional)
 
@@ -218,7 +220,7 @@ blog/index.html           Blog list with pagination, search box and topic button
 search.json               the list of posts the search reads (built automatically, don't edit)
 404.html                  "page not found"
 _data/projects.yml        the Projects on the Home page
-_posts/                   articles and exercises (the seven here are samples)
+_posts/                   articles and exercises (the three with an `exercise:` block make good templates)
 _layouts/ _includes/      page templates and small building blocks
 assets/css/main.css       all styling, light and dark theme
 assets/js/site.js         theme toggle (and keyboard scrolling for wide tables)
@@ -242,10 +244,10 @@ structured data (JSON-LD), and it does nothing if a plugin stops writing the sla
 Keep `google9eadca7802cbe987.html` in the top folder. Google Search Console uses it to confirm that the site is yours and
 checks it again from time to time. It is served as it is and left out of the sitemap (see `defaults:` in `_config.yml`).
 
-## 9. The sample content
+## 9. The current content
 
-The seven posts in `_posts/` are **starter content** so that the blog, pagination and each exercise type work from day one.
-Read them, keep what you like, and delete the rest. The About text on the Home page is a first draft, so please edit it until it sounds like you.
+The seven posts in `_posts/` are the blog's first articles and exercises. The three exercises (multiple choice, fill in the blank and word order) are the templates for new ones,
+and each new post appears in the list, the search and the topic buttons by itself. The About text is in `index.html`.
 
 ## 10. If something looks wrong
 

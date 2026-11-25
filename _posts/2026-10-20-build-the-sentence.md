@@ -36,7 +36,7 @@ exercise:
         - "We will stay at home if it rains."
       explain: "First conditional: *if* + simple present, then *will* + base form. When the *if* clause comes first, a comma follows it."
 ---
-Word order is one of the biggest differences between languages, and English is strict about it. In this exercise you rebuild six sentences from scrambled words. Tap a word to add it to your sentence, and tap it again to take it back. Some sentences can be built in more than one natural order, and every natural order is accepted.
+Word order is one of the biggest differences between languages, and English is strict about it. In this exercise you rebuild six sentences from scrambled words. Tap a word to add it to your sentence, and tap it again to take it back. Some sentences can be built in more than one natural order, and the exercise accepts the common ones.
 
 **Tip:** find the verb first, then ask who does it and what happens next.
 {: .note}
