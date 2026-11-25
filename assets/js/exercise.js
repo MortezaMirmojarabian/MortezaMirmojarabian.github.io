@@ -53,10 +53,14 @@
     return svg;
   }
 
+  // A straight apostrophe is shown as the typographic one (’), like the apostrophes in the post text. Only the display
+  // changes: typed answers are still compared with both kinds treated alike (see norm).
+  function typo(text) { return String(text).replace(/'/g, '’'); }
+
   // **bold**, *italic* and `code` become real elements. Nothing is ever parsed as HTML.
   function rich(text) {
     var frag = document.createDocumentFragment();
-    String(text === null || text === undefined ? '' : text)
+    typo(text === null || text === undefined ? '' : text)
       .split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g)
       .forEach(function (part) {
         if (!part) return;
@@ -124,7 +128,7 @@
     } else {
       verdict.appendChild(el('strong', { text: empty ? 'No answer yet.' : 'Not quite.' }));
       verdict.appendChild(document.createTextNode(' Answer: '));
-      verdict.appendChild(el('strong', { class: 'ex-answer', text: answers.join(' / ') }));
+      verdict.appendChild(el('strong', { class: 'ex-answer', text: typo(answers.join(' / ')) }));
     }
     box.appendChild(verdict);
     if (explain) box.appendChild(el('p', { class: 'ex-explain' }, [rich(explain)]));
@@ -176,7 +180,7 @@
     options.forEach(function (option) {
       var k = inputs.length;
       var input = el('input', { type: 'radio', name: name, value: String(k) });
-      var label = el('label', { class: 'ex-opt' }, [input, el('span', { class: 'ex-opt-ui', text: option })]);
+      var label = el('label', { class: 'ex-opt' }, [input, el('span', { class: 'ex-opt-ui', text: typo(option) })]);
       input.addEventListener('change', function () {
         clearMarks();
         if (blank) {
@@ -184,9 +188,9 @@
           if (/^no article$/i.test(String(option).trim())) {
             // "No article" means nothing goes in the blank: show a dash, and let screen readers hear the option
             blank.appendChild(el('span', { 'aria-hidden': 'true', text: '\u2014' }));
-            blank.appendChild(el('span', { class: 'sr-only', text: option }));
+            blank.appendChild(el('span', { class: 'sr-only', text: typo(option) }));
           } else {
-            blank.textContent = option;
+            blank.textContent = typo(option);
           }
           blank.classList.add('is-filled');
         }
@@ -205,7 +209,7 @@
       el: li,
       check: function () {
         var pick = picked();
-        var ok = pick === answer;
+        var ok = pick !== -1 && pick === answer;     // an unanswered question is never correct, even if the answer in the front matter matches no option
         labels.forEach(function (label, k) {
           label.classList.toggle('is-answer', k === answer);
           label.classList.toggle('is-wrong-pick', k === pick && !ok);
@@ -300,7 +304,7 @@
     var endMark = el('span', { class: 'ex-end', 'aria-hidden': 'true', text: ending });
 
     var buttons = words.map(function (word, k) {
-      var button = el('button', { type: 'button', class: 'ex-token', text: word });
+      var button = el('button', { type: 'button', class: 'ex-token', text: typo(word) });
       button.addEventListener('click', function () {
         var at = placed.indexOf(k);
         if (at === -1) placed.push(k); else placed.splice(at, 1);
@@ -314,13 +318,13 @@
 
     function render() {
       placed.forEach(function (k, n) {
-        buttons[k].textContent = n === 0 ? words[k].charAt(0).toUpperCase() + words[k].slice(1) : words[k];
+        buttons[k].textContent = typo(n === 0 ? words[k].charAt(0).toUpperCase() + words[k].slice(1) : words[k]);
         line.appendChild(buttons[k]);
       });
       if (placed.length && ending) line.appendChild(endMark);
       else if (endMark.parentNode) endMark.parentNode.removeChild(endMark);
       order.forEach(function (k) {
-        if (placed.indexOf(k) === -1) { buttons[k].textContent = words[k]; bank.appendChild(buttons[k]); }
+        if (placed.indexOf(k) === -1) { buttons[k].textContent = typo(words[k]); bank.appendChild(buttons[k]); }
       });
       clear.hidden = placed.length === 0;
     }

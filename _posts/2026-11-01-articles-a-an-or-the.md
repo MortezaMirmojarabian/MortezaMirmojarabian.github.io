@@ -13,7 +13,7 @@ exercise:
       options: ["a", "an", "the", "no article"]
       answer: "an"
       explain: "*Honest* begins with a vowel **sound** (the *h* is silent), so we use *an*."
-    - q: "He studies at ___ university in Isfahan."
+    - q: "There is ___ university near my house."
       options: ["a", "an", "the", "no article"]
       answer: "a"
       explain: "*University* begins with a *y* sound, which counts as a consonant sound, so we use *a*."
@@ -33,10 +33,10 @@ exercise:
       options: ["a", "an", "the", "no article"]
       answer: "no article"
       explain: "We normally use no article with meals: *have breakfast*, *have lunch*, *have dinner*."
-    - q: "She plays ___ piano beautifully."
-      options: ["a", "an", "the", "no article"]
-      answer: "the"
-      explain: "With musical instruments we normally use *the*: *play the piano*, *play the guitar*."
+    - q: "I have a cat and a dog. ___ cat is white."
+      options: ["A", "An", "The", "No article"]
+      answer: "The"
+      explain: "We already mentioned the cat, so both people know which one: *the cat*."
     - q: "Ali bought ___ new car last week."
       options: ["a", "an", "the", "no article"]
       answer: "a"

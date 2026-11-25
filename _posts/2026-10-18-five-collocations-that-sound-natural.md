@@ -2,7 +2,7 @@
 title: "Five Collocations That Make Your English Sound Natural"
 date: 2026-10-18
 image: /assets/img/posts/five-collocations-that-sound-natural.png
-description: "Native speakers say “heavy rain”, not “strong rain”. Learn words in pairs and your English will sound more natural."
+description: "Native speakers say “heavy rain,” not “strong rain.” Learn words in pairs and your English will sound more natural."
 tags: [vocabulary, collocations]
 level: B1
 ---
@@ -26,17 +26,17 @@ A **collocation** is a group of words that naturally go together. English speake
 
 ## 3. Take a...
 
-*take a break*, *take a photo*, *take a chance*, *take your time*
+*take a break*, *take a photo*, *take a chance*, *take a seat*
 
 ## 4. Pay attention
 
-We *pay* attention, not *give* it. Other natural partners: *pay a compliment*, *pay a visit*.
+We *pay* attention, not *do* or *make* attention. Other natural partners: *pay a compliment*, *pay a visit*.
 
 ## 5. Fast or quick?
 
 - **fast** describes speed: a fast car, a fast train, fast internet
 - **quick** describes something that takes a short time: a quick look, a quick question, a quick shower
-- Some pairs are fixed: *fast food*
+- Some pairs are fixed: *fast food* (not *quick food*)
 
 ## How to learn collocations
 
@@ -45,5 +45,5 @@ We *pay* attention, not *give* it. Other natural partners: *pay a compliment*, *
 3. **Use a learner's dictionary.** Good ones list the common partners of each word.
 4. **Use them.** Write one sentence about your own life for each new chunk.
 
-**Tip:** when a phrase feels odd, check it. Translating word for word from your first language is the most common source of unnatural collocations.
+**Tip:** when a phrase feels odd, check it. Translating word for word from your first language is a common source of unnatural collocations.
 {: .note}

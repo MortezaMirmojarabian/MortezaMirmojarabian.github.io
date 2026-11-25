@@ -11,7 +11,7 @@
   <header class="exercise-head">
     <h2 id="exercise-title">Practice</h2>
     {%- if page.exercise.instructions %}
-    <p>{{ page.exercise.instructions | escape }}</p>
+    <p>{{ page.exercise.instructions | replace: "'", "’" | escape }}</p>
     {%- endif %}
   </header>
   <div data-exercise-body data-via="{{ via }}">

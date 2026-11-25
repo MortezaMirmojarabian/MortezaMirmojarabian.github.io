@@ -156,16 +156,19 @@ exercise:
       explain: "*Honest* begins with a vowel **sound**, so we use *an*."
 ```
 
-**Fill in the blank** (case, extra spaces, curly quotes and a final full stop are ignored; list every accepted answer):
+**Fill in the blank** (case, extra spaces, curly quotes and a final period are ignored; list every accepted answer):
 
 ```yaml
 exercise:
   kind: fill
   questions:
-    - q: "I ___ (live) in Tehran since 2015."
-      answer: ["have lived", "'ve lived"]
+    - q: "I ___ (live) in Chicago since 2015."
+      answer: ["have lived", "'ve lived", "have been living", "'ve been living"]   # every correct answer
       explain: "*Since 2015* needs the present perfect."
 ```
+
+Before you publish, ask whether a learner could give another correct answer (above, `have been living` is as good as `have lived`) and list it too.
+Tell learners to type only the missing words: whatever is already printed in the sentence is not part of the answer.
 
 **Word order** (the words of `answer` are shuffled; the reader taps them into place. The tiles show the words without punctuation and without the capital letter that starts the sentence; the sentence line adds the capital to its first word and the final `.`, `?` or `!` by itself. Names and *I* keep their capital letters, except a name that is the very first word of the answer, which shows in lowercase until it is placed first):
 
@@ -178,8 +181,8 @@ exercise:
       explain: "In an indirect question the word order is like a statement."
     - q: "Build a sentence about a possible future."
       answer:                                  # more than one correct order? list them
-        - "If it rains tomorrow, we will stay at home."     # the first one is the model answer
-        - "We will stay at home if it rains tomorrow."      # the same words, in another natural order
+        - "If it rains, we will stay at home."     # the first one is the model answer
+        - "We will stay at home if it rains."      # the same words, in another natural order
 ```
 
 When a sentence can be built in more than one natural way, list every way as above. Capital letters and punctuation are ignored when the
@@ -188,6 +191,8 @@ reader's sentence is checked, but the alternatives must use exactly the same wor
 Notes:
 
 - `explain` is optional and understands `*italic*`, `**bold**` and `` `code` ``. Plain text is safe: HTML is never interpreted.
+- Type apostrophes the normal way (`'`). The exercise shows them as typographic apostrophes (’), like the rest of the post, and a learner can type either kind.
+  Mark a word with italics (`*word*`) rather than single quotation marks.
 - You can mix types: leave out `kind:` at the top and give each question its own `kind: choice | fill | order`.
 - In YAML, wrap any text that contains a colon (`:`) in double quotes, and indent with spaces (never tabs).
 - If a question list doesn't appear, check the indentation first. The three sample exercises in `_posts/` are good templates.

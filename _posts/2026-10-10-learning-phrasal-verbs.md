@@ -6,7 +6,7 @@ description: "Phrasal verbs are everywhere in everyday English. Four habits that
 tags: [vocabulary, phrasal verbs]
 level: B1
 ---
-A **phrasal verb** is a verb plus a small word (a particle) such as *up*, *out*, or *off*. Together they often mean something different from the verb on its own: *give up* (stop trying), *look after* (take care of), *run out of* (have none left).
+A **phrasal verb** is a verb plus one or two small words (particles) such as *up*, *out*, or *off*. Together they often mean something different from the verb on its own: *give up* (stop trying), *look after* (take care of), *run out of* (have none left).
 
 ## Why long lists don't work
 
