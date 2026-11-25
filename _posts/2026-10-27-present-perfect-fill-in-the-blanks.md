@@ -13,8 +13,8 @@ exercise:
       answer: ["have owned", "'ve owned"]
       explain: "*Since 2015* shows a situation that started in the past and continues now, so we use the present perfect."
     - q: "She ___ (not / finish) her homework yet."
-      answer: ["has not finished", "hasn't finished"]
-      explain: "*Yet* in a negative sentence goes with the present perfect: *has not (hasn't) finished*. British English also says *She's not finished*, but in American English we say *hasn't finished*."
+      answer: ["has not finished", "hasn't finished", "'s not finished"]
+      explain: "*Yet* in a negative sentence goes with the present perfect: *has not (hasn't) finished*. *She's not finished* is also correct, especially in British English, but *hasn't finished* is more common in American English."
     - q: "Have you ever ___ (visit) New York?"
       answer: "visited"
       explain: "*Ever* asks about experience up to now. After *have you ever*, we use the past participle."
