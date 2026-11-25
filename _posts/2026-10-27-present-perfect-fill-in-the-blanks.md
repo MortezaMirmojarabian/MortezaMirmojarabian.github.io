@@ -7,11 +7,11 @@ tags: [grammar, tenses, present perfect]
 level: B1
 exercise:
   kind: fill
-  instructions: "Complete each sentence with the present perfect of the words in parentheses. Type only the missing words, because the subject is already in the sentence. Full forms (have lived) and short forms ('ve lived) are both accepted."
+  instructions: "Complete each sentence with the present perfect of the words in parentheses. Type only the missing words, because the subject is already in the sentence. Full forms (have owned) and short forms ('ve owned) are both accepted."
   questions:
-    - q: "I ___ (live) in Chicago since 2015."
-      answer: ["have lived", "'ve lived", "have been living", "'ve been living"]
-      explain: "*Since 2015* shows a situation that started in the past and continues now, so we use the present perfect. *Have been living* is also correct."
+    - q: "I ___ (own) this car since 2015."
+      answer: ["have owned", "'ve owned"]
+      explain: "*Since 2015* shows a situation that started in the past and continues now, so we use the present perfect."
     - q: "She ___ (not / finish) her homework yet."
       answer: ["has not finished", "hasn't finished"]
       explain: "*Yet* in a negative sentence goes with the present perfect: *has not (hasn't) finished*. British English also says *She's not finished*, but in American English we say *hasn't finished*."
@@ -27,9 +27,9 @@ exercise:
     - q: "He ___ (lose) his keys, so he can't get in."
       answer: ["has lost", "'s lost"]
       explain: "The past event has a result now (he cannot get in), so we use the present perfect."
-    - q: "How long has she ___ (work) here?"
-      answer: ["worked", "been working"]
-      explain: "*How long* + *has she* + past participle (*worked*) or *been working*. Both mean she still works here."
+    - q: "How long has she ___ (be) here?"
+      answer: "been"
+      explain: "*How long* asks about a situation that continues until now. *Be* is irregular: *be*, *was*, *been*, so we say *has been*."
     - q: "I ___ (never / see) such a beautiful sunset."
       answer: ["have never seen", "'ve never seen"]
       explain: "*Never* goes between *have* and the past participle. We use it for experiences in a lifetime."
