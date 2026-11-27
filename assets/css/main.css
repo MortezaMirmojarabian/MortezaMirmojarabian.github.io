@@ -200,7 +200,11 @@ img { max-width: 100%; height: auto; }
 
 [hidden] { display: none !important; }
 
-.icon { flex: none; width: 1.125em; height: 1.125em; }
+.icon { flex: none; width: 1.125em; height: 1.125em; overflow: visible; }
+/* Icons are drawn at fractional sizes and positions (browser zoom, display scaling, phones), and browsers clip an SVG at a
+   pixel-snapped edge, which can shave the edge off a glyph that touches it. The Telegram symbol has its own margin (see
+   icons.html); this keeps every icon, and any full-bleed mark added later, from being clipped. */
+symbol { overflow: visible; }
 
 .sr-only {
   position: absolute;
