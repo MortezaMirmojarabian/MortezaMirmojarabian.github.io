@@ -261,8 +261,8 @@ and each new post appears in the list, the search and the topic buttons by itsel
 
 - **This site's code** (templates, styles and scripts) is under the MIT license: see `LICENSE`. The articles and exercises in `_posts/` are © 2026 Morteza Mirmojarabian, all rights reserved, unless a post says otherwise. If you would rather share them, say so in `LICENSE` or in this section (for example under CC BY 4.0).
 - **Inter** typeface, SIL Open Font License 1.1: the license text is in `assets/fonts/Inter-LICENSE.txt`.
-- **UI icons** (arrows, sun, moon, check, close, mail, code, library, search, users, megaphone) come from [Lucide](https://lucide.dev), ISC license:
+- **UI icons** (arrows, sun, moon, check, close, mail, code, library, search, users, megaphone and the paper plane used for Telegram) come from [Lucide](https://lucide.dev), ISC license:
   *Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.*
   Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-- **X and Telegram marks** are from [Simple Icons](https://simpleicons.org) (CC0 1.0). The names and logos belong to their owners and are used only to link to those services.
+- **The X mark** is from [Simple Icons](https://simpleicons.org) (CC0 1.0). The names and logos of X and Telegram belong to their owners and are used only to link to those services.
 - Built with Jekyll and its plugins (MIT).
